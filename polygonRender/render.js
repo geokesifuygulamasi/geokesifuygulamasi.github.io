@@ -94,7 +94,7 @@ function renderAngles(ctx, polygonData, canvas)
     const edges = polygonData.kenarlar;
 
     /** @type {Object[]} */
-    const angles = polygonData.açılar;
+    const angles = polygonData.açılar ?? [];
 
     function getAngle(edge1, edge2)
     {
@@ -192,7 +192,7 @@ function renderAngles(ctx, polygonData, canvas)
 function toScreenCoord(x, y, canvas)
 {   
     const xOut = (x + 1) / 2 * canvas.width;
-    const yOut = (y + 1) / 2 * canvas.height;
+    const yOut = (1 - y) / 2 * canvas.height;
     return {
         x: xOut,
         y: yOut
@@ -205,7 +205,7 @@ function toScreenCoord(x, y, canvas)
 function toScreenCoordObj(coord, canvas)
 {
     const x = (coord.x + 1) / 2 * canvas.width;
-    const y = (coord.y + 1) / 2 * canvas.height;
+    const y = (1 - coord.y) / 2 * canvas.height;
     return {
         x: x,
         y: y
