@@ -48,7 +48,6 @@ export function createHitTesterForPolygon(elementID, polygonData)
             
             if(dist < checkRadius)
             {
-                console.log(dist);
                 document.dispatchEvent(new CustomEvent("PolygonAngleHit", {detail: { id: id }}))
                 return;
             }
