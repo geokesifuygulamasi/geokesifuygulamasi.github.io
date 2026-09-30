@@ -1,3 +1,5 @@
+import { getAngle, toScreenCoordObj } from "../polygon/helper.js";
+
 /**
  * @param {string} elementID
  * @param {Object} polygonData
@@ -96,62 +98,10 @@ function renderAngles(ctx, polygonData, canvas)
     /** @type {Object[]} */
     const angles = polygonData.açılar ?? [];
 
-    function getAngle(edge1, edge2)
-    {
-        if(edge1.v1 >= vertices.length)
-        {
-            throw new Error("[renderAngles::getAngle] passed a vertex index that is out of range : [VERTEX_INDEX] : " + edge1.v1 + " : [RANGE] : " + (vertices.length - 1));
-        }
-        if(edge1.v2 >= vertices.length)
-        {
-            throw new Error("[renderAngles::getAngle] passed a vertex index that is out of range : [VERTEX_INDEX] : " + edge1.v2 + " : [RANGE] : " + (vertices.length - 1));
-        }
-        if(edge2.v1 >= vertices.length)
-        {
-            throw new Error("[renderAngles::getAngle] passed a vertex index that is out of range : [VERTEX_INDEX] : " + edge2.v1 + " : [RANGE] : " + (vertices.length - 1));
-        }
-        if(edge2.v2 >= vertices.length)
-        {
-            throw new Error("[renderAngles::getAngle] passed a vertex index that is out of range : [VERTEX_INDEX] : " + edge2.v2 + " : [RANGE] : " + (vertices.length - 1));
-        }
-        function getCommonVertex(edge1, edge2)
-        {
-            if (edge1.v1 === edge2.v1 || edge1.v1 === edge2.v2)
-                return edge1.v1;
-
-            if (edge1.v2 === edge2.v1 || edge1.v2 === edge2.v2)
-                return edge1.v2;
-
-            return -1;
-        }
-
-        const commonVertexID = getCommonVertex(edge1, edge2);
-        if(commonVertexID === -1)
-        {
-            throw new Error("[renderAngles::getAngle] passed edges don't have a common vertex : [EDGE1] : " + edge1 + " : [EDGE2] : " + edge2);
-        }
-        const commonVertex = vertices[commonVertexID];
-
-        const otherVertexID1 = (edge1.v1 === commonVertexID) ? (edge1.v2) : (edge1.v1);
-        const otherVertex1 = vertices[otherVertexID1];
-        
-        const startAngle = Math.atan2(otherVertex1.y - commonVertex.y, otherVertex1.x - commonVertex.x);
-
-        const otherVertexID2 = (edge2.v1 === commonVertexID) ? (edge2.v2) : (edge2.v1);
-        const otherVertex2 = vertices[otherVertexID2];
-        const endAngle = Math.atan2(otherVertex2.y - commonVertex.y, otherVertex2.x - commonVertex.x);
-
-
-        return {
-            center: commonVertex,
-        
-            start: startAngle,
-            end: endAngle
-        };
-    }
-
     const radius = polygonData.açıYarıÇapı ?? 30;
     const fillStyle = polygonData.açıDoldurmaStili ?? "rgba(167, 227, 111, 0.25)";
+
+    
 
     angles.forEach((angleRequest) => 
     {
@@ -170,12 +120,11 @@ function renderAngles(ctx, polygonData, canvas)
             throw new Error("[renderAngles::getAngle] passed an edge index that is out of range : [EDGE_INDEX] : " + edge2 + " : [RANGE] : " + (edges.length - 1));
         }
 
-        const angle = getAngle(edges[edge1], edges[edge2]);
-        const center = toScreenCoordObj(angle.center, canvas);
+        const angle = getAngle(edges[edge1], edges[edge2], vertices, canvas);
 
-        ctx.moveTo(center.x, center.y);
+        ctx.moveTo(angle.center.x, angle.center.y);
 
-        ctx.arc(center.x, center.y, angleRequest.yarıÇap ?? radius, angle.start, angle.end);
+        ctx.arc(angle.center.x, angle.center.y, angleRequest.yarıÇap ?? radius, angle.start, angle.end, true);
 
         ctx.closePath();    
 
@@ -184,30 +133,3 @@ function renderAngles(ctx, polygonData, canvas)
     });
 }
 
-/**
- * @param {number} x
- * @param {number} y 
- * @param {HTMLCanvasElement} canvas 
- */
-function toScreenCoord(x, y, canvas)
-{   
-    const xOut = (x + 1) / 2 * canvas.width;
-    const yOut = (1 - y) / 2 * canvas.height;
-    return {
-        x: xOut,
-        y: yOut
-    };
-}
-/**
- * @param {Object} coord 
- * @param {HTMLCanvasElement} canvas 
- */
-function toScreenCoordObj(coord, canvas)
-{
-    const x = (coord.x + 1) / 2 * canvas.width;
-    const y = (1 - coord.y) / 2 * canvas.height;
-    return {
-        x: x,
-        y: y
-    };
-}
