@@ -18,6 +18,13 @@
  */
 
 
+/**
+ * 
+ * @param {EdgeObject} edge1 
+ * @param {EdgeObject} edge2 
+ *
+ * iki kenar arasındaki ortak köşeyi döndürüyor eğer yoksa -1
+ */
 export function getCommonVertex(edge1, edge2)
 {
     if (edge1.v1 === edge2.v1 || edge1.v1 === edge2.v2)
@@ -33,6 +40,10 @@ export function getCommonVertex(edge1, edge2)
  * @param {VertexObject[]} vertices 
  * @param {HTMLCanvasElement} canvas 
  * @returns {AngleObject}
+ * 
+ * iki kenarlı bir objenin açısını alıyor common yani ortak vertex e göre
+ * ilk başta radyan bazlı olaraktan edge1 common olmayan köşeşini alıyor ve onla açısını starta kayedediyor
+ * sonra edge2 nin comman olmayan köşeşini alıyor ve onla açışını end e yazaraktan edge1 ve edge2 arasındaki açıyı hesaplıyor
  */
 export function getAngle(edge1, edge2, vertices, canvas)
 {
