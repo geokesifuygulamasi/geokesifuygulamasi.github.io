@@ -2551,7 +2551,7 @@
         },
         {
             "ismi": "Öklid Teoremi",
-            "aciklama": "Bir dik üçgende hipotenüse ait yüksekliğin karesi, hipotenüs üzerinde ayırdığı iki parçanın çarpımına eşittir. Ayrıca her dik kenarın karesi, kendisine komşu olan hipotenüs parçası ile hipotenüsün tamamının çarpımına eşittir. Şekilde {sarı:rect} ile gösterilen dik açılar, yüksekliğin hipotenüse dik olduğunu gösterir. {pink:rect} ile gösterilen dik üçgenin sol kenarı, {orange:rect} ile gösterilen dik üçgenin sağ kenarı, {mavi:rect} ile gösterilen yüksekliği, {kırmızı:rect} ile {yeşil:rect} ise yüksekliğin hipotenüsü bölmesiyle oluşmuş parçaları gösterir. Bu durumda:\n{mavi:rect}² = {kırmızı:rect}*{yeşil:rect}\n{pink:rect}  = {kırmızı:rect}*({kırmızı:rect} + {green:rect})\n{orange:rect}  = {green:rect}*({green:rect} + {kırmızı:rect})\ndenklemleri geçerlidir",
+            "aciklama": "Bir dik üçgende hipotenüse ait yüksekliğin karesi, hipotenüs üzerinde ayırdığı iki parçanın çarpımına eşittir. Ayrıca her dik kenarın karesi, kendisine komşu olan hipotenüs parçası ile hipotenüsün tamamının çarpımına eşittir. Şekilde {sarı:rect} ile gösterilen dik açılar, yüksekliğin hipotenüse dik olduğunu gösterir. {pink:rect} ile gösterilen dik üçgenin sol kenarı, {orange:rect} ile gösterilen dik üçgenin sağ kenarı, {mavi:rect} ile gösterilen yüksekliği, {kırmızı:rect} ile {yeşil:rect} ise yüksekliğin hipotenüsü bölmesiyle oluşmuş parçaları gösterir. Bu durumda:\n{mavi:rect}² = {kırmızı:rect}*{yeşil:rect}\n{pink:rect}² = {kırmızı:rect}*({kırmızı:rect} + {green:rect})\n{orange:rect}² = {green:rect}*({green:rect} + {kırmızı:rect})\ndenklemleri geçerlidir",
             "şekilBoyutu": 20,
             "şekilUzaklığı": 40,
             "açıYarıÇapı": 60,
