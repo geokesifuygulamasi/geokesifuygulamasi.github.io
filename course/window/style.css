@@ -1,0 +1,148 @@
+.window {
+    position: fixed;
+
+    width: 400px;
+    height: 300px;
+
+    left: 100px;
+    top: 100px;
+
+    background: white;
+    border: 1px solid #444;
+    border-radius: 8px;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+
+    z-index: 1000;
+
+    overflow: hidden;
+}
+
+.window-title {
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 10px;
+
+    background: #333;
+    color: white;
+
+    cursor: move;
+
+    user-select: none;
+}
+
+.window-content {
+    height: calc(100% - 40px);
+    padding: 10px;
+
+    overflow: auto;
+}
+
+#closeButton {
+    border: none;
+    background: transparent;
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+```css
+.controlGroup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    width: 100%;
+    margin-top: 24px;
+}
+
+.controlGroup button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+    padding: 10px 18px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #374151;
+
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 160ms ease,
+        border-color 160ms ease,
+        color 160ms ease,
+        box-shadow 160ms ease,
+        transform 160ms ease;
+}
+
+.controlGroup button:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgb(0 0 0 / 8%);
+}
+
+.controlGroup button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.controlGroup button:focus-visible {
+    outline: 3px solid rgb(59 130 246 / 40%);
+    outline-offset: 3px;
+}
+
+/* Kurslar: ana aksiyon */
+.controlGroup #showCourses {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+}
+
+.controlGroup #showCourses:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+    box-shadow: 0 4px 12px rgb(37 99 235 / 25%);
+}
+
+/* Dar ekranlar */
+@media (max-width: 480px) {
+    .controlGroup {
+        gap: 8px;
+    }
+
+    .controlGroup button {
+        flex: 1 1 auto;
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+}
+
+/* Hareket azaltma tercihi */
+@media (prefers-reduced-motion: reduce) {
+    .controlGroup button {
+        transition: none;
+    }
+
+    .controlGroup button:hover {
+        transform: none;
+    }
+}
+```

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="../page/style.css">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="description" content="Geometriyi keşfet, şekilleri incele ve geometrik teoremleri kendin bul.">
+    <link rel="icon" href="/ico.svg">
+
+    <title>GeoKeşif | Geometriyi Keşfet</title>
+</head>
+
+<body>
+    <header id="header"></header>
+    <main id="content">
+        <aside id="courseSidebar">
+            <h2>Göster</h2>
+            <div id="courseList"></div>
+        </aside>
+
+        <section id="canvasContainer">
+            <div id="previewWrapper">
+                <canvas id="previewCanvas"></canvas>
+                <button id="startCourse" type="button">
+                    Başla
+                </button>
+            </div>
+        </section>
+    </main>
+    <footer id="iletisim"></footer>
+
+    <script src="./courseSelector.js" type="module"></script>
+</body>
+
+</html>

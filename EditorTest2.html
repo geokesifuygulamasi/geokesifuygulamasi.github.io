@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Geometri JSON Editörü</title>
+<style>
+  :root{
+    --bg:#0e1620; --panel:#152030; --panel2:#1b2939; --line:#28394b;
+    --text:#e6edf3; --muted:#8fa3b7; --accent:#4da3ff;
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none !important}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  }
+  header{
+    position:sticky; top:0; z-index:20; display:flex; flex-wrap:wrap; gap:8px;
+    align-items:center; padding:10px 16px; background:rgba(21,32,48,.96);
+    backdrop-filter:blur(6px); border-bottom:1px solid var(--line);
+  }
+  header h1{margin:0 auto 0 0; font-size:15px; font-weight:600; letter-spacing:.2px}
+
+  button{
+    font:inherit; color:var(--text); background:var(--panel2);
+    border:1px solid var(--line); border-radius:8px; padding:7px 12px;
+    cursor:pointer; transition:.15s;
+  }
+  button:hover{background:#243649; border-color:#3a5170}
+  button.primary{background:var(--accent); border-color:var(--accent); color:#04121f; font-weight:600}
+  button.primary:hover{filter:brightness(1.1)}
+  button.danger{color:#ff9a9a}
+  button.danger:hover{background:#3a1f26; border-color:#7a3346}
+
+  main{
+    display:grid; grid-template-columns:400px minmax(0,1fr); gap:16px;
+    padding:16px; max-width:1500px; margin:0 auto; align-items:start;
+  }
+  @media (max-width:1000px){ main{grid-template-columns:1fr} }
+
+  .card{
+    background:var(--panel); border:1px solid var(--line);
+    border-radius:12px; padding:14px;
+  }
+  .card h2{
+    margin:0 0 10px; font-size:12px; text-transform:uppercase;
+    letter-spacing:.09em; color:var(--muted); font-weight:600;
+  }
+  .card h3.sub{
+    margin:18px 0 10px; font-size:12px; text-transform:uppercase;
+    letter-spacing:.09em; color:var(--muted); font-weight:600;
+  }
+  .hint{color:var(--muted); font-size:12px; font-weight:400}
+  .spacer{flex:1}
+
+  input[type=text], input[type=number], select, textarea{
+    width:100%; min-width:0; background:#0d1722; color:var(--text);
+    border:1px solid var(--line); border-radius:7px; padding:6px 8px; font:inherit;
+  }
+  input[type=number]{padding:4px 6px; font-size:12px}
+  input:focus, select:focus, textarea:focus{
+    outline:none; border-color:var(--accent);
+    box-shadow:0 0 0 3px rgba(77,163,255,.15);
+  }
+  textarea{resize:vertical; min-height:120px; line-height:1.55}
+  select{cursor:pointer}
+
+  input[type=color]{
+    -webkit-appearance:none; appearance:none; border:1px solid var(--line);
+    border-radius:7px; background:none; padding:0; width:30px; height:28px; cursor:pointer;
+  }
+  input[type=color]::-webkit-color-swatch-wrapper{padding:2px}
+  input[type=color]::-webkit-color-swatch{border:none; border-radius:4px}
+
+  /* renk satırı */
+  .color-row{
+    display:grid; grid-template-columns:24px 30px 1fr 1fr 24px; gap:6px;
+    align-items:center; background:var(--panel2); border:1px solid var(--line);
+    border-radius:9px; padding:8px; margin-bottom:8px;
+  }
+  .color-row .rgba{
+    grid-column:1 / -1; display:grid; grid-template-columns:repeat(4,1fr); gap:6px;
+  }
+  .color-row .rgba > div{display:flex; align-items:center; gap:4px}
+  .color-row .rgba span{font-size:11px; color:var(--muted)}
+  .color-row .del{padding:0; height:24px; line-height:1; font-size:15px; color:#ff9a9a}
+  .color-row .del:hover{background:#3a1f26; border-color:#7a3346}
+  .badge{
+    display:grid; place-items:center; height:26px; border-radius:6px;
+    background:#0d1722; border:1px solid var(--line); font-size:12px;
+    color:var(--muted); font-variant-numeric:tabular-nums;
+  }
+
+  /* kurs */
+  .course-bar{display:flex; flex-direction:column; gap:6px}
+  .course-title{
+    margin:0 0 14px; font-size:17px; font-weight:700; line-height:1.3;
+    padding-bottom:10px; border-bottom:1px solid var(--line);
+  }
+  .field{display:flex; flex-direction:column; gap:4px}
+  .lbl{font-size:11px; color:var(--muted); letter-spacing:.02em}
+
+  /* açı / kenar kartı */
+  .angle{
+    background:var(--panel2); border:1px solid var(--line);
+    border-radius:10px; padding:10px 12px; margin-bottom:10px;
+  }
+  .angle-head{display:flex; gap:8px; align-items:center; margin-bottom:10px}
+  .angle-head .del{
+    padding:0 8px; height:26px; font-size:16px; line-height:1; color:#ff9a9a;
+  }
+  .angle-head .del:hover{background:#3a1f26; border-color:#7a3346}
+  .tag{
+    font-size:11px; color:var(--muted); background:#0d1722;
+    border:1px solid var(--line); border-radius:20px; padding:2px 9px;
+    font-variant-numeric:tabular-nums;
+  }
+  .angle-title{font-weight:600; font-size:13px}
+  .angle-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px}
+  .angle-grid .wide{grid-column:1 / -1}
+
+  .section{margin-top:10px}
+  .add-btn{
+    width:100%; margin-top:10px; border-style:dashed; color:var(--muted);
+    background:transparent;
+  }
+  .add-btn:hover{color:var(--text); border-color:var(--accent); background:rgba(77,163,255,.06)}
+
+  /* boş ekran */
+  .empty{display:grid; place-items:center; min-height:70vh; text-align:center; padding:24px}
+  .empty h2{margin:0 0 6px; font-size:18px}
+  .empty p{margin:0 0 16px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🧩 Geometri JSON Editörü</h1>
+  <input type="file" id="fileInput" accept=".json,.txt,application/json" hidden>
+  <button id="btnLoad">📂 JSON Yükle</button>
+  <button id="btnDownload" class="primary">💾 İndir</button>
+  <button id="btnReset" class="danger">🗑 Temizle</button>
+</header>
+
+<main id="app" hidden>
+  <aside class="card">
+    <h2>Renkler <span id="colorCount" class="hint"></span></h2>
+    <div id="colorList"></div>
+    <button id="btnAddColor" style="width:100%;margin-top:4px">+ Renk Ekle</button>
+  </aside>
+
+  <section>
+    <div class="card course-bar">
+      <label for="courseSelect" class="lbl">Kural / Kurs seç</label>
+      <select id="courseSelect"></select>
+    </div>
+    <div class="card" id="courseEditor" style="margin-top:16px"></div>
+  </section>
+</main>
+
+<div id="empty" class="empty">
+  <div>
+    <h2>Başlamak için JSON dosyanı yükle</h2>
+    <p class="hint">Dosyayı bu pencerenin üzerine sürükle-bırak veya aşağıdaki butonu kullan.</p>
+    <button id="btnLoad2" class="primary">📂 JSON Yükle</button>
+  </div>
+</div>
+
+<script>
+"use strict";
+
+/* ===================== yardımcılar ===================== */
+const $  = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+
+function el(tag, props = {}, ...children){
+  const n = document.createElement(tag);
+  for (const k in props){
+    const v = props[k];
+    if (k === "class") n.className = v;
+    else if (k === "text") n.textContent = v;
+    else if (k === "html") n.innerHTML = v;
+    else if (k.startsWith("on") && typeof v === "function") n.addEventListener(k.slice(2).toLowerCase(), v);
+    else if (k in n) n[k] = v;
+    else n.setAttribute(k, v);
+  }
+  children.flat().forEach(c => {
+    if (c === null || c === undefined || c === false) return;
+    n.append(c.nodeType ? c : document.createTextNode(String(c)));
+  });
+  return n;
+}
+
+const clamp255 = v => Math.max(0, Math.min(255, Math.round(Number(v) || 0)));
+const rgbaToHex = rgba => "#" + [0,1,2].map(i =>
+  clamp255(rgba[i] ?? 0).toString(16).padStart(2, "0")).join("");
+function hexToRgb(hex){
+  const m = /^#?([0-9a-f]{6})$/i.exec(hex || "");
+  if (!m) return [0,0,0];
+  const n = parseInt(m[1], 16);
+  return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+}
+
+/* ===================== durum ===================== */
+const LS_DATA   = "geo_json_editor_data_v1";
+const LS_COURSE = "geo_json_editor_course_v1";
+
+let data = null;
+let currentCourse = 0;
+
+let saveTimer;
+function save(){
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => {
+    try{
+      localStorage.setItem(LS_DATA, JSON.stringify(data));
+      localStorage.setItem(LS_COURSE, String(currentCourse));
+    }catch(e){ console.warn("Kaydedilemedi:", e); }
+  }, 250);
+}
+
+/* ===================== açılış ===================== */
+function boot(){
+  const raw = localStorage.getItem(LS_DATA);
+  if (raw){
+    try{
+      data = JSON.parse(raw);
+      currentCourse = Number(localStorage.getItem(LS_COURSE) || 0) || 0;
+    }catch(e){ data = null; }
+  }
+  if (data) renderAll();
+  else showEmpty();
+}
+
+function showEmpty(){
+  $("#app").hidden = true;
+  $("#empty").hidden = false;
+}
+
+function renderAll(){
+  if (!data) return showEmpty();
+  $("#empty").hidden = true;
+  $("#app").hidden = false;
+
+  if (!Array.isArray(data.renkler)) data.renkler = [];
+  if (!Array.isArray(data.kurslar) || !data.kurslar.length) data.kurslar = [];
+  if (currentCourse >= data.kurslar.length) currentCourse = 0;
+
+  renderColors();
+  renderCourseSelect();
+  renderCourse();
+}
+
+/* ===================== dosya işlemleri ===================== */
+function openFilePicker(){ $("#fileInput").click(); }
+
+function readFile(file){
+  const r = new FileReader();
+  r.onload = () => {
+    try{
+      const txt = String(r.result).replace(/^\uFEFF/, "");
+      const obj = JSON.parse(txt);
+      if (!obj || typeof obj !== "object") throw new Error("Geçersiz JSON");
+      data = obj;
+      currentCourse = 0;
+      save();
+      renderAll();
+    }catch(err){
+      alert("JSON okunamadı:\n" + err.message);
+    }
+    $("#fileInput").value = "";
+  };
+  r.readAsText(file, "utf-8");
+}
+
+function downloadJSON(){
+  if (!data) return;
+  const blob = new Blob([JSON.stringify(data, null, 4)], {type: "application/json;charset=utf-8"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "geometri.json";
+  document.body.append(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1500);
+}
+
+/* ===================== RENKLER ===================== */
+function renderColors(){
+  const wrap = $("#colorList");
+  wrap.innerHTML = "";
+  $("#colorCount").textContent = "(" + data.renkler.length + ")";
+
+  data.renkler.forEach((c, i) => {
+    if (!Array.isArray(c.rgba)) c.rgba = [0, 0, 0, 255];
+    while (c.rgba.length < 4) c.rgba.push(255);
+
+    const swatch = el("input", {type: "color", value: rgbaToHex(c.rgba)});
+    const name   = el("input", {type: "text", value: c.name ?? "", placeholder: "Türkçe ad"});
+    const eng    = el("input", {type: "text", value: c.eng_name ?? "", placeholder: "eng_name"});
+    const del    = el("button", {class: "del", title: "Rengi sil"}, "×");
+
+    const rgbaWrap = el("div", {class: "rgba"});
+    const labels = ["R", "G", "B", "A"];
+    const numInputs = [];
+    for (let k = 0; k < 4; k++){
+      const inp = el("input", {type: "number", min: "0", max: "255", step: "1", value: c.rgba[k]});
+      inp.addEventListener("input", () => {
+        c.rgba[k] = clamp255(inp.value);
+        if (k < 3) swatch.value = rgbaToHex(c.rgba);
+        save();
+      });
+      numInputs.push(inp);
+      rgbaWrap.append(el("div", {}, el("span", {text: labels[k]}), inp));
+    }
+
+    swatch.addEventListener("input", () => {
+      const [r, g, b] = hexToRgb(swatch.value);
+      c.rgba[0] = r; c.rgba[1] = g; c.rgba[2] = b;
+      if (c.rgba[3] === undefined) c.rgba[3] = 255;
+      numInputs[0].value = r; numInputs[1].value = g; numInputs[2].value = b;
+      save();
+    });
+
+    name.addEventListener("input", () => { c.name = name.value; save(); refreshColorSelectLabels(); });
+    eng.addEventListener("input",  () => { c.eng_name = eng.value; save(); });
+
+    del.addEventListener("click", () => {
+      if (!confirm("Renk #" + i + " (" + (c.name || "") + ") silinsin mi?\n\n" +
+                   "Tüm renk referansları otomatik güncellenecek.")) return;
+      deleteColorAndRemap(i);
+      renderColors();
+      renderCourse();
+    });
+
+    wrap.append(el("div", {class: "color-row"},
+      el("div", {class: "badge", text: String(i)}),
+      swatch, name, eng, del, rgbaWrap
+    ));
+  });
+}
+
+/** Renk sil + tüm referansları (kenarRengiID, renkID, doğruRenkID) güncelle */
+function deleteColorAndRemap(idx){
+  if (idx < 0 || idx >= data.renkler.length) return;
+  data.renkler.splice(idx, 1);
+
+  const remapRef = (obj, k) => {
+    if (!obj || !(k in obj)) return;
+    const v = obj[k];
+    if (typeof v !== "number") return;
+    if (v === idx){
+      if (data.renkler.length === 0) delete obj[k];
+      else obj[k] = 0;
+    } else if (v > idx){
+      obj[k] = v - 1;
+    }
+  };
+
+  remapRef(data, "kenarRengiID");
+  (data.kurslar || []).forEach(k => {
+    (k["açılar"]   || []).forEach(a => { remapRef(a, "renkID"); remapRef(a, "doğruRenkID"); });
+    (k["kenarlar"] || []).forEach(e => { remapRef(e, "renkID"); });
+  });
+
+  save();
+}
+
+/* ===================== SEÇİCİLER ===================== */
+const EXTRA_SHAPES = ["triangle","square","rect","circle","parallel",
+                      "empty","emptyTriangle","emptyCircle","emptySquare","emptySqure","emptyRect"];
+
+function shapeList(current){
+  const set = new Set();
+  (data["şekiller"] || []).forEach(s => { if (s && s.type) set.add(s.type); });
+  EXTRA_SHAPES.forEach(t => set.add(t));
+  if (current) set.add(current);
+  return Array.from(set);
+}
+
+function shapeSelect(current, onChange){
+  const sel = el("select");
+  sel.append(el("option", {value: "", text: "— (yok)"}));
+  shapeList(current).forEach(t => sel.append(el("option", {value: t, text: t})));
+  sel.value = current ?? "";
+  sel.addEventListener("change", () => {
+    onChange(sel.value === "" ? undefined : sel.value);
+  });
+  return sel;
+}
+
+function colorSelect(current, onChange){
+  const sel = el("select", {class: "color-select"});
+  fillColorOptions(sel, current);
+  sel.addEventListener("change", () => {
+    sel.dataset.selected = sel.value;
+    onChange(sel.value === "" ? undefined : Number(sel.value));
+  });
+  return sel;
+}
+
+function fillColorOptions(sel, current){
+  const val = (current === undefined || current === null) ? "" : String(current);
+  sel.innerHTML = "";
+  sel.append(el("option", {value: "", text: "— (yok)"}));
+  (data.renkler || []).forEach((c, i) => {
+    sel.append(el("option", {value: String(i), text: i + " — " + (c.name ?? "")}));
+  });
+  sel.value = val;
+  sel.dataset.selected = val;
+}
+
+function refreshColorSelectLabels(){
+  $$(".color-select").forEach(sel => {
+    fillColorOptions(sel, sel.dataset.selected);
+  });
+}
+
+/* ===================== KURS ===================== */
+function renderCourseSelect(){
+  const sel = $("#courseSelect");
+  sel.innerHTML = "";
+  data.kurslar.forEach((k, i) => {
+    sel.append(el("option", {value: String(i), text: (i + 1) + ". " + (k.ismi || "(isimsiz)")}));
+  });
+  sel.value = String(currentCourse);
+}
+
+function renderCourse(){
+  const wrap = $("#courseEditor");
+  wrap.innerHTML = "";
+
+  if (!data.kurslar.length){
+    wrap.append(el("p", {class: "hint", text: "JSON içinde kurs bulunamadı."}));
+    return;
+  }
+  if (currentCourse >= data.kurslar.length) currentCourse = 0;
+
+  const c = data.kurslar[currentCourse];
+  $("#courseSelect").value = String(currentCourse);
+
+  // Başlık
+  wrap.append(el("h2", {class: "course-title", text: c.ismi || "(isimsiz kural)"}));
+
+  // Açıklama
+  const ta = el("textarea", {rows: 7});
+  ta.value = c.aciklama ?? "";
+  ta.addEventListener("input", () => { c.aciklama = ta.value; save(); });
+  wrap.append(el("div", {class: "field"},
+    el("label", {class: "lbl", text: "aciklama"}),
+    ta,
+    el("span", {class: "hint", text: "İpucu: {mavi:daire} gibi yer tutucular metin içinde kullanılabilir."})
+  ));
+
+  // Açılar & Kenarlar
+  wrap.append(renderSection(c, "açılar",   "açı"));
+  wrap.append(renderSection(c, "kenarlar", "kenar"));
+}
+
+function renderSection(c, key, kind){
+  const box = el("div", {class: "section"});
+  const arr = Array.isArray(c[key]) ? c[key] : null;
+  const count = arr ? arr.length : 0;
+
+  box.append(el("h3", {class: "sub",
+    text: (kind === "açı" ? "Açılar" : "Kenarlar") + " (" + count + ")"}));
+
+  if (arr && arr.length){
+    arr.forEach((item, i) => box.append(itemEditor(c, key, item, i, kind)));
+  } else {
+    box.append(el("p", {class: "hint", text: "Bu kursta henüz " + kind + " kaydı yok."}));
+  }
+
+  const addBtn = el("button", {class: "add-btn",
+    text: "+ " + (kind === "açı" ? "Açı" : "Kenar") + " Ekle"});
+  addBtn.addEventListener("click", () => addItem(c, key, kind));
+  box.append(addBtn);
+
+  return box;
+}
+
+/* --- tek açı / kenar kartı --- */
+function itemEditor(c, key, item, i, kind){
+  const box = el("div", {class: "angle"});
+  const title = el("span", {class: "angle-title",
+    text: item.ismi || (kind === "açı" ? "açı" : "kenar")});
+
+  const del = el("button", {class: "del", title: "Sil"}, "×");
+  del.addEventListener("click", () => {
+    if (!confirm("#" + i + " numaralı " + kind + " silinsin mi?")) return;
+    c[key].splice(i, 1);
+    save();
+    renderCourse();
+  });
+
+  box.append(el("div", {class: "angle-head"},
+    el("span", {class: "tag", text: "#" + i}),
+    title,
+    el("span", {class: "spacer"}),
+    del
+  ));
+
+  const grid = el("div", {class: "angle-grid"});
+
+  // Yapısal referanslar
+  if (kind === "açı"){
+    grid.append(field("edge1", numberInput(item, "edge1")));
+    grid.append(field("edge2", numberInput(item, "edge2")));
+  } else {
+    grid.append(field("v1", numberInput(item, "v1")));
+    grid.append(field("v2", numberInput(item, "v2")));
+  }
+
+  // İstediğin 5 alan — her zaman görünür
+  grid.append(field("ismi", textInput(item, "ismi", v => {
+    title.textContent = v || (kind === "açı" ? "açı" : "kenar");
+  }), true));
+
+  grid.append(field("şekil",       shapeSelect(item.şekil,       v => setOrDelete(item, "şekil", v))));
+  grid.append(field("renkID",      colorSelect(item.renkID,      v => setOrDelete(item, "renkID", v))));
+  grid.append(field("doğruŞekil",  shapeSelect(item.doğruŞekil,  v => setOrDelete(item, "doğruŞekil", v))));
+  grid.append(field("doğruRenkID", colorSelect(item.doğruRenkID, v => setOrDelete(item, "doğruRenkID", v))));
+
+  box.append(grid);
+  return box;
+}
+
+/* --- alan yardımcıları --- */
+function field(label, input, wide){
+  return el("div", {class: "field" + (wide ? " wide" : "")},
+    el("label", {class: "lbl", text: label}),
+    input
+  );
+}
+
+function setOrDelete(obj, key, val){
+  if (val === undefined || val === null || val === "") delete obj[key];
+  else obj[key] = val;
+  save();
+}
+
+function textInput(obj, key, cb){
+  const inp = el("input", {type: "text", value: obj[key] ?? ""});
+  inp.addEventListener("input", () => {
+    if (inp.value === "") delete obj[key];
+    else obj[key] = inp.value;
+    if (cb) cb(obj[key] ?? "");
+    save();
+  });
+  return inp;
+}
+
+function numberInput(obj, key){
+  const inp = el("input", {type: "number", step: "1", value: obj[key] ?? 0});
+  inp.addEventListener("input", () => {
+    const v = parseInt(inp.value, 10);
+    if (Number.isFinite(v)){ obj[key] = v; save(); }
+  });
+  return inp;
+}
+
+/* --- ekleme --- */
+function addItem(c, key, kind){
+  if (!Array.isArray(c[key])) c[key] = [];
+  const prev = c[key][c[key].length - 1];
+  let item;
+
+  if (kind === "açı"){
+    item = {
+      edge1: (prev && typeof prev.edge1 === "number") ? prev.edge1 : 0,
+      edge2: (prev && typeof prev.edge2 === "number") ? prev.edge2 : 1,
+      ismi: "yeni açı"
+    };
+  } else {
+    item = {
+      v1: (prev && typeof prev.v1 === "number") ? prev.v1 : 0,
+      v2: (prev && typeof prev.v2 === "number") ? prev.v2 : 1,
+      ismi: "yeni kenar"
+    };
+  }
+
+  c[key].push(item);
+  save();
+  renderCourse();
+}
+
+/* ===================== olaylar ===================== */
+$("#btnLoad").addEventListener("click", openFilePicker);
+$("#btnLoad2").addEventListener("click", openFilePicker);
+$("#fileInput").addEventListener("change", e => {
+  const f = e.target.files && e.target.files[0];
+  if (f) readFile(f);
+});
+
+$("#btnDownload").addEventListener("click", downloadJSON);
+
+$("#btnReset").addEventListener("click", () => {
+  if (!confirm("Kaydedilmiş tüm değişiklikler silinsin mi?")) return;
+  localStorage.removeItem(LS_DATA);
+  localStorage.removeItem(LS_COURSE);
+  data = null;
+  currentCourse = 0;
+  showEmpty();
+});
+
+$("#btnAddColor").addEventListener("click", () => {
+  if (!data) return;
+  data.renkler.push({name: "Yeni Renk", rgba: [255, 255, 255, 255], eng_name: "newcolor"});
+  save();
+  renderColors();
+  refreshColorSelectLabels();
+});
+
+$("#courseSelect").addEventListener("change", e => {
+  currentCourse = Number(e.target.value) || 0;
+  save();
+  renderCourse();
+});
+
+/* sürükle-bırak */
+["dragenter", "dragover"].forEach(ev =>
+  window.addEventListener(ev, e => { e.preventDefault(); })
+);
+window.addEventListener("drop", e => {
+  e.preventDefault();
+  const f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+  if (f) readFile(f);
+});
+
+/* başlat */
+boot();
+</script>
+</body>
+</html>

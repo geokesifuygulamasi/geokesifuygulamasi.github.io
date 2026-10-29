@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <title>GeoKeşif | Geometriyi Keşfet</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./window/style.css">
+    <link rel="stylesheet" href="./polygonColoring/style.css">
+    <link rel="stylesheet" href="../page/style.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./toast/style.css">
+
+    <meta name="description" content="Geometriyi keşfet, şekilleri incele ve geometrik teoremleri kendin bul.">
+    <link rel="icon"  href="/ico.svg">
+
+</head>
+
+<body>
+    <header id="header"></header>
+    <main id="content">
+        <section id="questionCard">
+            <div id="questionHeader">
+                <span id="questionCategory">GEOMETRİ</span>
+                <span id="questionNumber">Soru</span>
+            </div>
+        
+            <p id="questionText"></p>
+            <p id="questionHint" hidden></p>  
+
+            <div class="controlGroup">
+                <button id="previousCourse" type="button">Önceki Özellik</button>
+                <button id="nextCourse" type="button">Sonraki Özellik</button>
+                <button id="showCourses" type="button">Göster</button>
+                <button id="restartCourse" type="button">Yeniden Başla</button>
+            </div>
+            <p id="questionReminder"></p>
+        </section>
+
+        <section id="canvasContainer">
+            <div id="test">
+                <canvas id="renderCanvas"></canvas>
+            </div>
+            <button id="checkQuestion" type="button">
+                Kontrol Et
+            </button>
+        </section>
+    </main>
+
+    <footer id="iletisim"></footer>
+    <svg id="colorMatchingLines" aria-hidden="true"></svg>
+    <section id="colorMatchingPanel" hidden></section>
+    <script src="./course.js" type="module"></script>
+</body>
+
+</html>

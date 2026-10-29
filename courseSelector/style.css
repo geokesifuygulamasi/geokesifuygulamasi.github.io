@@ -1,0 +1,211 @@
+:root {
+    --previewBackgroundColor: white;
+    --previewLine: #2b3855;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#header,
+#iletisim {
+    flex-shrink: 0;
+}
+
+#content {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Sol kurs listesi */
+
+#courseSidebar {
+    flex: 0 0 240px;
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    border-right: 1px solid #444;
+    background: #202020;
+    color: white;
+}
+
+#courseSidebar h2 {
+    flex-shrink: 0;
+    margin: 0;
+    padding: 16px;
+    font-size: 18px;
+}
+
+#courseList {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    padding: 8px;
+}
+
+.courseItem {
+    flex-shrink: 0;
+    width: 100%;
+    padding: 12px;
+
+    border: 1px solid #444;
+    border-radius: 6px;
+
+    background: #2a2a2a;
+    color: white;
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.courseItem:hover {
+    background: #383838;
+}
+
+.courseItem.selected {
+    border-color: #589cff;
+    background: #263e5c;
+}
+
+
+#coursePreview {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+#startCourse:hover {
+    background: #1b66cc;
+}
+
+@media (max-width: 600px) {
+    #courseSidebar {
+        flex-basis: 150px;
+    }
+
+    #startCourse {
+        right: 12px;
+        bottom: 12px;
+        min-width: 120px;
+        min-height: 52px;
+        padding: 12px 18px;
+        font-size: 18px;
+    }
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+
+.symbol {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: var(--symbol-color);
+    vertical-align: middle;
+    margin: 0 3px;
+}
+
+.symbol-daire {
+    border-radius: 100%;
+}
+
+.symbol-kare {
+    border-radius: 0;
+}
+
+.symbol-üçgen {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 16px solid var(--symbol-color);
+}
+
+
+#canvasContainer {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+#previewWrapper {
+    position: relative;
+    flex: 0 1 auto;
+
+    width: fit-content;
+    height: fit-content;
+
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#previewCanvas {
+    display: block;
+    max-width: 100%;
+    background-color: var(--previewBackgroundColor);
+}
+
+#startCourse {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    z-index: 1;
+
+    min-width: 140px;
+    min-height: 52px;
+    padding: 12px 24px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #2878e8;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#startCourse:hover {
+    background: #1b66cc;
+}
+
+@media (max-width: 600px) {
+    #startCourse {
+        right: 8px;
+        bottom: 8px;
+
+        min-width: 110px;
+        min-height: 44px;
+        padding: 10px 16px;
+
+        font-size: 16px;
+    }
+}
