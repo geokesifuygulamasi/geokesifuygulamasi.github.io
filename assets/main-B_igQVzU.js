@@ -1,0 +1,1 @@
+import{t as e}from"./rolldown-runtime-B8xr6ykz.js";import{i as t,n,r,t as i}from"./contactBar-BMZA-hjv.js";e((()=>{t(),n(),r(`header`,!0,!0),i(`iletisim`)}))();
