@@ -1,0 +1,2638 @@
+{
+    "kenarKalınlığı": 10,
+    "şekilUzaklığı": 20,
+    "yazıUzaklığı": 60,
+    "şekilBoyutu": 10,
+    "kenarRengiID": 4,
+    "renkler": [
+        {
+            "name": "Kırmızı",
+            "rgba": [
+                255,
+                0,
+                0,
+                255
+            ],
+            "eng_name": "red"
+        },
+        {
+            "name": "Yeşil",
+            "rgba": [
+                0,
+                255,
+                0,
+                255
+            ],
+            "eng_name": "green"
+        },
+        {
+            "name": "Mavi",
+            "rgba": [
+                0,
+                0,
+                255,
+                255
+            ],
+            "eng_name": "blue"
+        },
+        {
+            "name": "Sarı",
+            "rgba": [
+                255,
+                255,
+                0,
+                255
+            ],
+            "eng_name": "yellow"
+        },
+        {
+            "name": "Siyah",
+            "rgba": [
+                0,
+                0,
+                0,
+                255
+            ],
+            "eng_name": "black"
+        },
+        {
+            "name": "Su Yeşili",
+            "rgba": [
+                86,
+                176,
+                146,
+                255
+            ],
+            "eng_name": "water_green"
+        },
+        {
+            "name": "Viole",
+            "rgba": [
+                127,
+                9,
+                255,
+                255
+            ],
+            "eng_name": "violet"
+        },
+        {
+            "name": "Turuncu",
+            "rgba": [
+                255,
+                140,
+                0,
+                255
+            ],
+            "eng_name": "orange"
+        },
+        {
+            "name": "Pembe",
+            "rgba": [
+                255,
+                204,
+                204,
+                255
+            ],
+            "eng_name": "pink"
+        },
+        {
+            "name": "Açık Mavi",
+            "rgba": [
+                179,
+                213,
+                224,
+                255
+            ],
+            "eng_name": "light_blue"
+        }
+    ],
+    "şekiller": [
+        {
+            "name": "Üçgen",
+            "type": "triangle"
+        },
+        {
+            "name": "Kare",
+            "type": "square"
+        },
+        {
+            "name": "Kare",
+            "type": "rect"
+        },
+        {
+            "name": "Daire",
+            "type": "circle"
+        },
+        {
+            "name": "Boş",
+            "type": "empty"
+        },
+        {
+            "name": "BoşÜçgen",
+            "type": "emptyTriangle"
+        },
+        {
+            "name": "BoşDaire",
+            "type": "emptyCircle"
+        },
+        {
+            "name": "BoşKare",
+            "type": "emptySqure"
+        },
+        {
+            "name": "BoşKare",
+            "type": "emptyRect"
+        }
+    ],
+    "kurslar": [
+        {
+            "ismi": "Komşu Bütünler Açılar",
+            "aciklama": "Aynı köşeyi ve ortak bir ışını paylaşan, diğer ışınları bir doğrunun karşıt yönlerinde bulunan iki açıya komşu bütünler açılar denir. Komşu bütünler açıların ölçüleri toplamı her zaman 180°'dır şekilde {mavi:rect} ile gösterilen geniş açı ve {kırmızı:rect} ile gösterilen dar açıları komşu bütünlerdir; {mavi:rect} + {kırmızı:rect} = 180° eşitliği sağlanır.",
+            "kenarTestiAktif": false,
+            "köşeler": [
+                {
+                    "x": -0.85,
+                    "y": -0.35
+                },
+                {
+                    "x": 0,
+                    "y": -0.35
+                },
+                {
+                    "x": 0.85,
+                    "y": -0.35
+                },
+                {
+                    "x": 0.5,
+                    "y": 0.516
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1
+                },
+                {
+                    "v1": 1,
+                    "v2": 2
+                },
+                {
+                    "v1": 1,
+                    "v2": 3
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 0,
+                    "edge2": 2,
+                    "renkID": 4,
+                    "şekil": "empty",
+                    "doğruRenkID": 2,
+                    "doğruŞekil": "rect",
+                    "ismi": "dar açı"
+                },
+                {
+                    "edge1": 2,
+                    "edge2": 1,
+                    "renkID": 4,
+                    "şekil": "empty",
+                    "doğruRenkID": 0,
+                    "doğruŞekil": "rect",
+                    "ismi": "geniş açı"
+                }
+            ]
+        },
+        {
+            "ismi": "Komşu Tümler Açılar",
+            "aciklama": "Komşu tümler açılar, birer kenarları ortak, diğer kenarları ortak kenarın iki farklı tarafında bulunan ve ölçüleri toplamı 90° olan iki açıdır. Şekilde {mavi:rect} ile gösterilen geniş açı {kırmızı:rect} ile gösterilen dar açı komşu tümler açılardır. Bu durumda {mavi:rect} + {kırmızı:rect} = 90° olur.",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "kenarTestiAktif": false,
+            "köşeler": [
+                {
+                    "x": -0.85,
+                    "y": -0.35
+                },
+                {
+                    "x": -0.85,
+                    "y": 0.65
+                },
+                {
+                    "x": 0.85,
+                    "y": -0.35
+                },
+                {
+                    "x": 0,
+                    "y": 0.25
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1,
+                    "kenarKalınlığı": 5
+                },
+                {
+                    "v1": 0,
+                    "v2": 2,
+                    "kenarKalınlığı": 5
+                },
+                {
+                    "v1": 0,
+                    "v2": 3,
+                    "kenarKalınlığı": 1
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 0,
+                    "edge2": 1,
+                    "şekil": "empty",
+                    "doğruRenkID": 2,
+                    "doğruŞekil": "rect",
+                    "ismi": "geniş açı"
+                },
+                {
+                    "edge1": 1,
+                    "edge2": 2,
+                    "şekil": "empty",
+                    "doğruRenkID": 0,
+                    "doğruŞekil": "rect",
+                    "ismi": "geniş açı"
+                }
+            ]
+        },
+        {
+            "ismi": "Ters Açılar",
+            "aciklama": "İki doğru bir noktada kesiştiğinde karşılıklı olarak oluşan açılara ters açılar denir. Ters açıların ölçüleri birbirine eşittir. Şekilde {water_green:rect} ile gösterilen dar açılar ve {violet:rect} ile gösterilen geniş açılar ters açılardır; bu nedenle ölçüleri eşittir.",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "kenarTestiAktif": false,
+            "köşeler": [
+                {
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "x": -0.2,
+                    "y": -0.6
+                },
+                {
+                    "x": 0.2,
+                    "y": 0.6
+                },
+                {
+                    "x": -0.2,
+                    "y": 0.6
+                },
+                {
+                    "x": 0.2,
+                    "y": -0.6
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1
+                },
+                {
+                    "v1": 0,
+                    "v2": 2
+                },
+                {
+                    "v1": 0,
+                    "v2": 3
+                },
+                {
+                    "v1": 0,
+                    "v2": 4
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 0,
+                    "edge2": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 6,
+                    "ismi": "karşıt geniş açı 1"
+                },
+                {
+                    "edge1": 1,
+                    "edge2": 3,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 6,
+                    "ismi": "karşıt geniş açı 2"
+                },
+                {
+                    "edge1": 2,
+                    "edge2": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 5,
+                    "ismi": "karşıt dar açı 1"
+                },
+                {
+                    "edge1": 3,
+                    "edge2": 0,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 5,
+                    "ismi": "karşıt dar açı 2"
+                }
+            ]
+        },
+        {
+            "ismi": "Paralel İki Doğrunun Bir Kesenle Yaptığı Açılar / Z Kuralı",
+            "aciklama": "İki paralel doğruyu kesen bir doğruya kesen denir. Bu durumda iç ters açılar eşittir, yöndeş açılar eşittir ve aynı yöndeki iç açıların toplamı 180° olur. Bu eşitlik şekil olarak 'Z' harfini andırdığı için Z kuralı olarak adlandırılır Şekilde {violet:rect} ile gösterilen dar açılı iç ters açılar birbirine eşittir. ve {orange:rect} ile gösterilen geniş açılı iç ters açılar birbirine eşittir",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "kenarTestiAktif": false,
+            "köşeler": [
+                {
+                    "x": -0.8,
+                    "y": 0.4
+                },
+                {
+                    "x": 0.2,
+                    "y": 0.4
+                },
+                {
+                    "x": 0.8,
+                    "y": 0.4
+                },
+                {
+                    "x": -0.8,
+                    "y": -0.4
+                },
+                {
+                    "x": -0.6,
+                    "y": -0.4
+                },
+                {
+                    "x": 0.8,
+                    "y": -0.4
+                },
+                {
+                    "x": -0.8,
+                    "y": -0.6
+                },
+                {
+                    "x": 0.4,
+                    "y": 0.6
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1,
+                    "şekil": "parallel",
+                    "şekilUzaklığı": 20
+                },
+                {
+                    "v1": 1,
+                    "v2": 2
+                },
+                {
+                    "v1": 3,
+                    "v2": 4
+                },
+                {
+                    "v1": 4,
+                    "v2": 5,
+                    "şekil": "parallel",
+                    "şekilUzaklığı": -20
+                },
+                {
+                    "v1": 6,
+                    "v2": 4
+                },
+                {
+                    "v1": 4,
+                    "v2": 1
+                },
+                {
+                    "v1": 1,
+                    "v2": 7
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 0,
+                    "edge2": 5,
+                    "şekil": "empty",
+                    "doğruRenkID": 6,
+                    "doğruŞekil": "rect",
+                    "ismi": "İç Ters Açı 1"
+                },
+                {
+                    "edge1": 3,
+                    "edge2": 5,
+                    "şekil": "empty",
+                    "doğruRenkID": 6,
+                    "doğruŞekil": "rect",
+                    "ismi": "İç Ters Açı 2"
+                },
+                {
+                    "edge1": 2,
+                    "edge2": 5,
+                    "ismi": "İç Ters Açı 3",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 7,
+                    "şekil": "empty"
+                },
+                {
+                    "edge1": 1,
+                    "edge2": 5,
+                    "ismi": "İç Ters Açı 4",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 7,
+                    "şekil": "empty"
+                }
+            ]
+        },
+        {
+            "ismi": "M Kuralı",
+            "aciklama": "İki paralel doğru arasında kalan kırık çizginin oluşturduğu M şeklinde, aşağı bakan açıların ölçüleri toplamı, yukarı bakan açının ölçüsüne eşittir. Şekilde verilen {green:rect} aşağı bakan açı + {yellow:rect} aşağı bakan açı = {pink:rect} yukarı bakan açı olur.",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "kenarTestiAktif": false,
+            "köşeler": [
+                {
+                    "x": -0.8,
+                    "y": -0.6
+                },
+                {
+                    "x": -0.8,
+                    "y": 0.4
+                },
+                {
+                    "x": 0,
+                    "y": -0.4
+                },
+                {
+                    "x": 0.8,
+                    "y": 0.4
+                },
+                {
+                    "x": 0.8,
+                    "y": -0.6
+                },
+                {
+                    "x": 0.8,
+                    "y": 0.8
+                },
+                {
+                    "x": -0.8,
+                    "y": 0.8
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1
+                },
+                {
+                    "v1": 1,
+                    "v2": 2
+                },
+                {
+                    "v1": 2,
+                    "v2": 3
+                },
+                {
+                    "v1": 1,
+                    "v2": 6
+                },
+                {
+                    "v1": 3,
+                    "v2": 4
+                },
+                {
+                    "v1": 4,
+                    "v2": 5
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 0,
+                    "edge2": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 1,
+                    "ismi": "aşağı bakan açı (sol)"
+                },
+                {
+                    "edge1": 1,
+                    "edge2": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 8,
+                    "ismi": "yukarı bakan açı"
+                },
+                {
+                    "edge1": 2,
+                    "edge2": 4,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 3,
+                    "ismi": "aşağı bakan açı (sağ)"
+                }
+            ]
+        },
+        {
+            "ismi": "U Kuralı",
+            "aciklama": "İki paralel doğru bir kesenle kesildiğinde, kesenin aynı tarafında ve paralel doğrular arasında kalan iç açıların toplamı 180° dir.  'U' harfini andırdığ Bu kurala U kuralı denir. Şekilde {water_green:rect} ile gösterilen dar açı ile {pink:rect} ile gösterilen geniş açı bu kuralı göstermektedir. buna göre {water_green:rect} + {pink:rect} = 180",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "kenarTestiAktif": false,
+            "köşeler": [
+                {
+                    "x": -0.8,
+                    "y": 0.5
+                },
+                {
+                    "x": -0.375,
+                    "y": 0.5
+                },
+                {
+                    "x": 0.8,
+                    "y": 0.5
+                },
+                {
+                    "x": -0.8,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.375,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.8,
+                    "y": -0.5
+                },
+                {
+                    "x": -0.6,
+                    "y": 0.8
+                },
+                {
+                    "x": 0.6,
+                    "y": -0.8
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1,
+                    "şekil": "parallel",
+                    "şekilUzaklığı": -20
+                },
+                {
+                    "v1": 1,
+                    "v2": 2
+                },
+                {
+                    "v1": 3,
+                    "v2": 4,
+                    "şekil": "parallel",
+                    "şekilUzaklığı": 20
+                },
+                {
+                    "v1": 4,
+                    "v2": 5
+                },
+                {
+                    "v1": 6,
+                    "v2": 1
+                },
+                {
+                    "v1": 1,
+                    "v2": 4
+                },
+                {
+                    "v1": 4,
+                    "v2": 7
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 1,
+                    "edge2": 5,
+                    "şekil": "empty",
+                    "doğruRenkID": 5,
+                    "doğruŞekil": "rect"
+                },
+                {
+                    "edge1": 3,
+                    "edge2": 5,
+                    "şekil": "empty",
+                    "doğruRenkID": 8,
+                    "doğruŞekil": "rect"
+                }
+            ]
+        },
+        {
+            "ismi": "Üçgenin İç Açıları",
+            "aciklama": "Bir üçgenin iç açılarının ölçüleri toplamı her zaman 180°'dir. Şekilde {mavi:rect}, {sarı:rect} ve {kırmızı:rect} iç açıları olup {mavi:rect} + {sarı:rect} + {kırmızı:rect} = 180° olur. (Saat yönüne göre sıralanmıştır)",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "kenarTestiAktif": false,
+            "köşeler": [
+                {
+                    "x": -0.7,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.7,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.128,
+                    "y": 0.487
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1
+                },
+                {
+                    "v1": 1,
+                    "v2": 2
+                },
+                {
+                    "v1": 2,
+                    "v2": 0
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 0,
+                    "edge2": 2,
+                    "şekil": "empty",
+                    "doğruRenkID": 0,
+                    "doğruŞekil": "rect"
+                },
+                {
+                    "edge1": 0,
+                    "edge2": 1,
+                    "şekil": "empty",
+                    "doğruRenkID": 3,
+                    "doğruŞekil": "rect"
+                },
+                {
+                    "edge1": 1,
+                    "edge2": 2,
+                    "şekil": "empty",
+                    "doğruRenkID": 2,
+                    "doğruŞekil": "rect"
+                }
+            ]
+        },
+        {
+            "ismi": "Üçgenin Dış Açıları",
+            "aciklama": "Bir üçgenin dış açılarının ölçüleri toplamı her zaman 360°'dir. Şekilde {Viole:rect}, {Turuncu:rect} ve {Pembe:rect} üçgenin dış açıları olup {Viole:rect} + {Turuncu:rect} + {Pembe:rect} = 360° olur. (Saat yönünün tersine göre sıralanmıştır)",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "kenarTestiAktif": false,
+            "köşeler": [
+                {
+                    "x": -0.3,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.5,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.1,
+                    "y": 0.4
+                },
+                {
+                    "x": -0.7,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.7,
+                    "y": -0.5
+                },
+                {
+                    "x": -0.1,
+                    "y": 0.85
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1
+                },
+                {
+                    "v1": 1,
+                    "v2": 2
+                },
+                {
+                    "v1": 2,
+                    "v2": 0
+                },
+                {
+                    "v1": 0,
+                    "v2": 3
+                },
+                {
+                    "v1": 2,
+                    "v2": 5
+                },
+                {
+                    "v1": 1,
+                    "v2": 4
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 2,
+                    "edge2": 4,
+                    "şekil": "empty",
+                    "doğruRenkID": 6,
+                    "doğruŞekil": "rect"
+                },
+                {
+                    "edge1": 1,
+                    "edge2": 5,
+                    "şekil": "empty",
+                    "doğruRenkID": 8,
+                    "doğruŞekil": "rect"
+                },
+                {
+                    "edge1": 2,
+                    "edge2": 3,
+                    "şekil": "empty",
+                    "doğruRenkID": 7,
+                    "doğruŞekil": "rect"
+                }
+            ]
+        },
+        {
+            "ismi": "Aynı Kenara Ait İç ve Dış Açıortay Arasındaki Açı",
+            "aciklama": "Bir üçgende, iki farklı köşeye ait bir iç açıortay ile bir dış açıortayın kesişmesiyle oluşan açının ölçüsü, üçgenin üçüncü köşesindeki (açıortayı çizilmeyen köşe) iç açının ölçüsünün yarısına eşittir. şekilde verildiği üzere {sarı:rect} ler dış açı ortay {mavi:rect} ler ise iç açı ortayı verir buna göre \n{orange:rect} = {pink:rect} / 2 veya 2{orange:rect} = {pink:rect}",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "kenarTestiAktif": false,
+            "köşeler": [
+                {
+                    "x": -0.2,
+                    "y": 0.4
+                },
+                {
+                    "x": 0.6,
+                    "y": 0.4
+                },
+                {
+                    "x": -0.4,
+                    "y": -0.6
+                },
+                {
+                    "x": 0.2,
+                    "y": -0.6
+                },
+                {
+                    "x": -0.8,
+                    "y": -0.6
+                },
+                {
+                    "x": 0.8,
+                    "y": -0.6
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 4,
+                    "v2": 2
+                },
+                {
+                    "v1": 2,
+                    "v2": 3
+                },
+                {
+                    "v1": 3,
+                    "v2": 5
+                },
+                {
+                    "v2": 0,
+                    "v1": 2
+                },
+                {
+                    "v1": 0,
+                    "v2": 3
+                },
+                {
+                    "v2": 1,
+                    "v1": 2
+                },
+                {
+                    "v1": 1,
+                    "v2": 3
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 1,
+                    "edge2": 5,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 2
+                },
+                {
+                    "edge1": 5,
+                    "edge2": 3,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 2
+                },
+                {
+                    "edge1": 2,
+                    "edge2": 6,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 3
+                },
+                {
+                    "edge1": 6,
+                    "edge2": 4,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 3
+                },
+                {
+                    "edge1": 3,
+                    "edge2": 4,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 8
+                },
+                {
+                    "edge1": 5,
+                    "edge2": 6,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 7
+                }
+            ]
+        },
+        {
+            "ismi": "İkizkenar Üçgen",
+            "aciklama": "İkizkenar üçgen, iki kenarı eşit olan üçgendir. Eşit kenarların karşısındaki açılar da eşittir. şekilde verilen {sarı:rect} kenarlar eş onların karşı açıları olan {water_green:rect} lerde eşdir",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "köşeler": [
+                {
+                    "x": 0,
+                    "y": 0.7
+                },
+                {
+                    "x": -0.6,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.6,
+                    "y": -0.5
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1,
+                    "benzerlikID": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 3,
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 0,
+                    "v2": 2,
+                    "benzerlikID": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 3
+                },
+                {
+                    "v1": 1,
+                    "v2": 2
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 0,
+                    "edge2": 2,
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 5,
+                    "şekil": "empty"
+                },
+                {
+                    "edge1": 1,
+                    "edge2": 2,
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 5,
+                    "şekil": "empty"
+                }
+            ]
+        },
+        {
+            "ismi": "Eşkenar Üçgen",
+            "aciklama": "Üç kenarının uzunluğu eşit olan üçgene eşkenar üçgen denir. Eşkenar üçgenin bütün iç açıları 60°, bütün dış açıları 120°'dir. şekilde gösterildiği gibi {sarı:rect} ile gösterilen kenarlar eş ve {mavi:rect} ile gösterilen açılarda eşdir",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "köşeler": [
+                {
+                    "x": -0.5,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.5,
+                    "y": -0.5
+                },
+                {
+                    "x": 0,
+                    "y": 0.366
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1,
+                    "benzerlikID": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "şekilUzaklığı": 80,
+                    "doğruRenkID": 3
+                },
+                {
+                    "v1": 1,
+                    "v2": 2,
+                    "benzerlikID": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "şekilUzaklığı": 80,
+                    "doğruRenkID": 3
+                },
+                {
+                    "v1": 2,
+                    "v2": 0,
+                    "benzerlikID": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "şekilUzaklığı": 80,
+                    "doğruRenkID": 3
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 0,
+                    "edge2": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 2
+                },
+                {
+                    "edge1": 0,
+                    "edge2": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 2
+                },
+                {
+                    "edge1": 1,
+                    "edge2": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 2
+                }
+            ]
+        },
+        {
+            "ismi": "Üçgenin Kenar Uzunlukları ile Karşı Açıları Arasındaki İlişki",
+            "aciklama": "Bir üçgende kenar uzunlukları ile karşılarındaki açıların ölçüleri arasında doğru orantı vardır. Yani bir kenar diğerinden uzunsa, o kenarın karşısındaki açı da diğer açıdan büyüktür. buna göre şekilde verildiği üzere \n{pink:rect} açısı > {orange:rect} açısı  > {green:rect} açısı şeklindedir buna göre \n{pink:rect} kenarı> {orange:rect} kenarı> {green:rect} kenarıdır\n\n(saat yönüne göre verilmiştir ve kenarlar ile açılar aynı renktedir)",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "köşeler": [
+                {
+                    "x": -0.6,
+                    "y": -0.4
+                },
+                {
+                    "x": 0.6,
+                    "y": -0.4
+                },
+                {
+                    "x": 0.1,
+                    "y": 0.5
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1,
+                    "doğruRenkID": 8,
+                    "doğruŞekil": "rect",
+                    "şekilUzaklığı": 80,
+                    "şekil": "empty"
+                },
+                {
+                    "v1": 1,
+                    "v2": 2,
+                    "doğruRenkID": 1,
+                    "doğruŞekil": "rect",
+                    "şekilUzaklığı": 80,
+                    "şekil": "empty"
+                },
+                {
+                    "v1": 2,
+                    "v2": 0,
+                    "doğruRenkID": 7,
+                    "doğruŞekil": "rect",
+                    "şekilUzaklığı": 80,
+                    "şekil": "empty"
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 0,
+                    "edge2": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 1
+                },
+                {
+                    "edge1": 0,
+                    "edge2": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 7
+                },
+                {
+                    "edge1": 1,
+                    "edge2": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 8
+                }
+            ]
+        },
+        {
+            "ismi": "Üçgen Eşitsizliği",
+            "aciklama": "Bir üçgende herhangi bir kenarın uzunluğu, diğer iki kenarın uzunlukları toplamından küçük, farkının mutlak değerinden büyüktür. Şekilde verildiği üzere\n altaki {pink:rect} kenarı için: \n| {mavi:rect} - {yeşil:rect} | < {pink:rect} < {mavi:rect} + {yeşil:rect}\n\n soldaki {green:rect} kenarı için:\n | {pink:rect} - {mavi:rect} | < {yeşil:rect} < {pink:rect} + {mavi:rect}\n\n sağdaki {mavi:rect} kenarı için:\n | {yeşil:rect} - {pink:rect} | < {mavi:rect} < {yeşil:rect} + {pink:rect}\n bu eşitsizlikler geçerlidir",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": 80,
+            "açıYarıÇapı": 60,
+            "köşeler": [
+                {
+                    "x": -0.6,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.6,
+                    "y": -0.5
+                },
+                {
+                    "x": 0,
+                    "y": 0.6
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 8
+                },
+                {
+                    "v1": 1,
+                    "v2": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 2
+                },
+                {
+                    "v1": 2,
+                    "v2": 0,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 1
+                }
+            ],
+            "açılar": []
+        },
+        {
+            "ismi": "Üçgenlerde Eşlik: Kenar Açı Kenar",
+            "aciklama": "İki üçgen arasında karşılıklı iki kenarın uzunluğu ve bu iki kenar arasındaki açının ölçüsü eşitse, bu iki üçgen eştir. Bu kurala Kenar-Açı-Kenar eşlik kuralı denir. Şekilde {mavi:rect} ile gösterilen kenarlar ve {sarı:rect} ile gösterilen diğer kenarlar karşılıklı olarak eşit, {kırmızı:rect} ile gösterilen açılar da eşit olduğundan üçgenler eştir. Eş üçgenlerde karşılıklı tüm kenarlar ve tüm açılar eşittir.",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "köşeler": [
+                {
+                    "x": -0.85,
+                    "y": -0.3
+                },
+                {
+                    "x": -0.15,
+                    "y": -0.3
+                },
+                {
+                    "x": -0.45,
+                    "y": 0.393
+                },
+                {
+                    "x": 0.15,
+                    "y": -0.3
+                },
+                {
+                    "x": 0.85,
+                    "y": -0.3
+                },
+                {
+                    "x": 0.45,
+                    "y": 0.393
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1,
+                    "benzerlikID": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 2,
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 1,
+                    "v2": 2
+                },
+                {
+                    "v1": 2,
+                    "v2": 0,
+                    "benzerlikID": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 3,
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 3,
+                    "v2": 4,
+                    "benzerlikID": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 2,
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 4,
+                    "v2": 5
+                },
+                {
+                    "v1": 5,
+                    "v2": 3,
+                    "benzerlikID": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 3,
+                    "şekilUzaklığı": 80
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 0,
+                    "edge2": 2,
+                    "şekil": "empty",
+                    "doğruRenkID": 0,
+                    "doğruŞekil": "rect",
+                    "ismi": "eş açı 1"
+                },
+                {
+                    "edge1": 3,
+                    "edge2": 5,
+                    "şekil": "empty",
+                    "doğruRenkID": 0,
+                    "doğruŞekil": "rect",
+                    "ismi": "eş açı 2"
+                }
+            ]
+        },
+        {
+            "ismi": "Üçgenlerde Eşlik: Açı Kenar Açı",
+            "aciklama": "Açı-Kenar-Açı eşlik kuralı: İki üçgenin iki açısı ve bu açılar arasındaki kenar karşılıklı olarak eşitse, bu iki üçgen eştir. Şekilde {kırmızı:rect} ile gösterilen açılar, {yeşil:rect} ile gösterilen açılar ve {sarı:rect} ile gösterilen kenarlar karşılıklı olarak eşit olduğundan üçgenler eştir.",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "köşeler": [
+                {
+                    "x": -0.9,
+                    "y": -0.3
+                },
+                {
+                    "x": -0.2,
+                    "y": -0.3
+                },
+                {
+                    "x": -0.428,
+                    "y": 0.096
+                },
+                {
+                    "x": 0.1,
+                    "y": -0.3
+                },
+                {
+                    "x": 0.8,
+                    "y": -0.3
+                },
+                {
+                    "x": 0.572,
+                    "y": 0.096
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 3,
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 1,
+                    "v2": 2
+                },
+                {
+                    "v1": 2,
+                    "v2": 0
+                },
+                {
+                    "v1": 3,
+                    "v2": 4,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 3,
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 4,
+                    "v2": 5
+                },
+                {
+                    "v1": 5,
+                    "v2": 3
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 0,
+                    "edge2": 2,
+                    "şekil": "empty",
+                    "doğruRenkID": 0,
+                    "doğruŞekil": "rect",
+                    "ismi": "kırmızı açı"
+                },
+                {
+                    "edge1": 0,
+                    "edge2": 1,
+                    "şekil": "empty",
+                    "doğruRenkID": 1,
+                    "doğruŞekil": "rect",
+                    "ismi": "yeşil açı"
+                },
+                {
+                    "edge1": 3,
+                    "edge2": 5,
+                    "şekil": "empty",
+                    "doğruRenkID": 0,
+                    "doğruŞekil": "rect",
+                    "ismi": "kırmızı açının eşi"
+                },
+                {
+                    "edge1": 3,
+                    "edge2": 4,
+                    "şekil": "empty",
+                    "doğruRenkID": 1,
+                    "doğruŞekil": "rect",
+                    "ismi": "yeşil açının eşi"
+                }
+            ]
+        },
+        {
+            "ismi": "Üçgenlerde Eşlik: Kenar Kenar Kenar",
+            "aciklama": "Kenar-Kenar-Kenar eşlik kuralı: İki üçgenin karşılıklı üç kenarı eşitse bu üçgenler eştir. Eş üçgenlerin karşılıklı açıları da eşittir. Şekilde {mavi:rect}, {sarı:rect} ve {yeşil:rect} ile gösterilen karşılıklı kenarlar eşit; {kırmızı:rect}, {turuncu:rect} ve {pink:rect} ile gösterilen karşılıklı açılar da eşittir.",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "köşeler": [
+                {
+                    "x": -0.8,
+                    "y": -0.4
+                },
+                {
+                    "x": -0.2,
+                    "y": -0.4
+                },
+                {
+                    "x": -0.5,
+                    "y": 0.5
+                },
+                {
+                    "x": 0.2,
+                    "y": -0.4
+                },
+                {
+                    "x": 0.8,
+                    "y": -0.4
+                },
+                {
+                    "x": 0.5,
+                    "y": 0.5
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1,
+                    "benzerlikID": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 2,
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 1,
+                    "v2": 2,
+                    "benzerlikID": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 3,
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 2,
+                    "v2": 0,
+                    "benzerlikID": 3,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 1,
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 3,
+                    "v2": 4,
+                    "benzerlikID": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 2,
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 4,
+                    "v2": 5,
+                    "benzerlikID": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 3,
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 5,
+                    "v2": 3,
+                    "benzerlikID": 3,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 1,
+                    "şekilUzaklığı": 80
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 1,
+                    "edge2": 2,
+                    "şekil": "empty",
+                    "doğruRenkID": 0,
+                    "doğruŞekil": "rect",
+                    "ismi": "eş açı 1"
+                },
+                {
+                    "edge1": 4,
+                    "edge2": 5,
+                    "şekil": "empty",
+                    "doğruRenkID": 0,
+                    "doğruŞekil": "rect",
+                    "ismi": "eş açı 2"
+                },
+                {
+                    "edge1": 0,
+                    "edge2": 1,
+                    "şekil": "empty",
+                    "doğruRenkID": 7,
+                    "doğruŞekil": "rect",
+                    "ismi": "eş açı 3"
+                },
+                {
+                    "edge1": 3,
+                    "edge2": 4,
+                    "şekil": "empty",
+                    "doğruRenkID": 7,
+                    "doğruŞekil": "rect",
+                    "ismi": "eş açı 4"
+                },
+                {
+                    "edge1": 2,
+                    "edge2": 0,
+                    "şekil": "empty",
+                    "doğruRenkID": 8,
+                    "doğruŞekil": "rect",
+                    "ismi": "eş açı 5"
+                },
+                {
+                    "edge1": 3,
+                    "edge2": 5,
+                    "şekil": "empty",
+                    "doğruRenkID": 8,
+                    "doğruŞekil": "rect",
+                    "ismi": "eş açı 6"
+                }
+            ]
+        },
+        {
+            "ismi": "Temel Orantı Teoremi",
+            "aciklama": "Bir üçgenin herhangi bir kenarına paralel olan bir doğru, diğer iki kenarı kesiyorsa bu kenarları doğru orantılı parçalara ayırır.\n\nŞekilde verildiği üzere bir doğru parçası üçgeni alttaki kenara paralel olacak şekilde ayırmıştır. bu durumda soldaki kenar {orange:rect} ve {viole:rect} şeklinde iki parçaya ayrılmış. sağdaki kenarsa {green:rect} ve {pink:rect} olucak şekilde iki parçaya ayrılmıştır.\nBu durumda:\n {orange:rect}         {green:rect}\n——  =  ——    eşitliği sağlanır\n {viole:rect}         {pink:rect}",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "kenarTestiAktif": true,
+            "açıTestiAktif": false,
+            "köşeler": [
+                {
+                    "x": 0,
+                    "y": 0.7
+                },
+                {
+                    "x": -0.8,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.8,
+                    "y": -0.5
+                },
+                {
+                    "x": -0.4,
+                    "y": 0.1
+                },
+                {
+                    "x": 0.4,
+                    "y": 0.1
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 3,
+                    "doğruRenkID": 7,
+                    "doğruŞekil": "rect",
+                    "şekilUzaklığı": 80,
+                    "şekil": "empty"
+                },
+                {
+                    "v1": 3,
+                    "v2": 1,
+                    "doğruRenkID": 6,
+                    "doğruŞekil": "rect",
+                    "şekilUzaklığı": 80,
+                    "şekil": "empty"
+                },
+                {
+                    "v1": 0,
+                    "v2": 4,
+                    "doğruRenkID": 1,
+                    "doğruŞekil": "rect",
+                    "şekil": "empty"
+                },
+                {
+                    "v1": 4,
+                    "v2": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 8
+                },
+                {
+                    "v1": 3,
+                    "v2": 4,
+                    "şekil": "parallel",
+                    "şekilUzaklığı": 20
+                },
+                {
+                    "v1": 1,
+                    "v2": 2,
+                    "şekil": "parallel",
+                    "şekilUzaklığı": 20
+                }
+            ]
+        },
+        {
+            "ismi": "Orta Taban",
+            "aciklama": "Bir üçgende iki kenarın orta noktalarını birleştiren doğru parçasına orta taban denir. Orta taban, üçgenin alt tabanına paraleldir ve uzunluğu alt tabanın yarısına eşittir. Şekilde {kırmızı:rect} ile gösterilen kenar orta kenar {green:rect} ile gösterilen alt taban {blue:rect} ile gösterilen eş kesilmiş soldaki kenarlar {sarı:rect} ile gösterilen eş kesilmiş sağdaki kenarlar olduğuna göre bu iki üçgen benzerdir ve benzerlik oranı temel orantıdan dolayı 1/2 dir bu yüzden {green:rect} / {kırmızı:rect} = 2",
+            "açıTestiAktif": false,
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "köşeler": [
+                {
+                    "x": 0,
+                    "y": 0.7
+                },
+                {
+                    "x": -0.7,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.7,
+                    "y": -0.5
+                },
+                {
+                    "x": -0.35,
+                    "y": 0.1
+                },
+                {
+                    "x": 0.35,
+                    "y": 0.1
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 3,
+                    "benzerlikID": 1,
+                    "şekil": "empty",
+                    "doğruRenkID": 2,
+                    "doğruŞekil": "rect",
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 3,
+                    "v2": 1,
+                    "benzerlikID": 1,
+                    "şekil": "empty",
+                    "doğruRenkID": 2,
+                    "doğruŞekil": "rect",
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 1,
+                    "v2": 2,
+                    "şekilUzaklığı": 40,
+                    "şekil": "empty",
+                    "doğruRenkID": 1,
+                    "doğruŞekil": "rect"
+                },
+                {
+                    "v1": 2,
+                    "v2": 4,
+                    "benzerlikID": 2,
+                    "şekil": "empty",
+                    "doğruRenkID": 3,
+                    "doğruŞekil": "rect",
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 4,
+                    "v2": 0,
+                    "benzerlikID": 2,
+                    "şekil": "empty",
+                    "doğruRenkID": 3,
+                    "doğruŞekil": "rect",
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 3,
+                    "v2": 4,
+                    "şekilUzaklığı": 40,
+                    "şekil": "empty",
+                    "doğruRenkID": 0,
+                    "doğruŞekil": "rect"
+                }
+            ],
+            "açılar": []
+        },
+        {
+            "ismi": "Thales Teoremi",
+            "aciklama": "Paralel doğrular, iki kesen üzerinde orantılı ayırır, Bu nedenle kesenler üzerinde ayrılan parçaların oranları eşittir; bu bağıntıya Thales Teoremi denir. \nşekilde verildiği üzere\n soldaki {kırmızı:rect} / {green:rect} = sağdaki {mavi:rect} / {yellow:rect}",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "köşeler": [
+                {
+                    "x": -0.8,
+                    "y": -0.6
+                },
+                {
+                    "x": -0.6,
+                    "y": 0.0
+                },
+                {
+                    "x": -0.4,
+                    "y": 0.6
+                },
+                {
+                    "x": 0.8,
+                    "y": -0.6
+                },
+                {
+                    "x": 0.6,
+                    "y": 0.0
+                },
+                {
+                    "x": 0.4,
+                    "y": 0.6
+                },
+                {
+                    "x": 0.8,
+                    "y": 0.0
+                },
+                {
+                    "x": -0.8,
+                    "y": 0.0
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 1
+                },
+                {
+                    "v1": 1,
+                    "v2": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 0
+                },
+                {
+                    "v1": 3,
+                    "v2": 4,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "şekilUzaklığı": 80,
+                    "doğruRenkID": 3
+                },
+                {
+                    "v1": 4,
+                    "v2": 5,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "şekilUzaklığı": 80,
+                    "doğruRenkID": 2
+                },
+                {
+                    "v1": 6,
+                    "v2": 7,
+                    "şekil": "parallel",
+                    "şekilUzaklığı": 40
+                },
+                {
+                    "v1": 0,
+                    "v2": 3,
+                    "şekil": "parallel",
+                    "şekilUzaklığı": -40
+                },
+                {
+                    "v1": 2,
+                    "v2": 5,
+                    "şekil": "parallel",
+                    "şekilUzaklığı": -40
+                }
+            ],
+            "açılar": []
+        },
+        {
+            "ismi": "Benzer üçgenlerde alanların oranı",
+            "aciklama": "Benzer iki üçgenin karşılıklı kenar uzunlukları oranına benzerlik oranı denir. Benzer üçgenlerin alanları oranı ise benzerlik oranının karesine eşittir. Şekilde verilen {kırmızı:rect} kenarı {green:rect} alt tabana parelldir buna göre temel orantı kuralında  bu üçgenlerin alan benzerllik oranları: \n({kırmızı:rect} / {green:rect})²",
+            "açıTestiAktif": false,
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "köşeler": [
+                {
+                    "x": 0,
+                    "y": 0.7
+                },
+                {
+                    "x": -0.7,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.7,
+                    "y": -0.5
+                },
+                {
+                    "x": -0.35,
+                    "y": 0.1
+                },
+                {
+                    "x": 0.35,
+                    "y": 0.1
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 3
+                },
+                {
+                    "v1": 3,
+                    "v2": 1
+                },
+                {
+                    "v1": 1,
+                    "v2": 2,
+                    "şekilUzaklığı": 40,
+                    "şekil": "empty",
+                    "doğruRenkID": 1,
+                    "doğruŞekil": "rect"
+                },
+                {
+                    "v1": 2,
+                    "v2": 4
+                },
+                {
+                    "v1": 4,
+                    "v2": 0
+                },
+                {
+                    "v1": 3,
+                    "v2": 4,
+                    "şekilUzaklığı": 40,
+                    "şekil": "empty",
+                    "doğruRenkID": 0,
+                    "doğruŞekil": "rect"
+                }
+            ],
+            "açılar": []
+        },
+        {
+            "ismi": "Üçgenin Yardımcı Elemanları: Açıortay",
+            "aciklama": "Bir üçgenin bir iç açısını iki eş parçaya bölen ışına o açının açıortayı denir. Şekilde {viole:rect} ile gösterilen kenar açı ortay {kırmızı:rect} ile gösterilen ise eş böldüğü açıdır",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "köşeler": [
+                {
+                    "x": 0,
+                    "y": 0.75
+                },
+                {
+                    "x": -0.7,
+                    "y": -0.6
+                },
+                {
+                    "x": 0.75,
+                    "y": -0.6
+                },
+                {
+                    "x": 0,
+                    "y": -0.6
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1
+                },
+                {
+                    "v1": 1,
+                    "v2": 2
+                },
+                {
+                    "v1": 2,
+                    "v2": 0
+                },
+                {
+                    "v1": 0,
+                    "v2": 3,
+                    "şekil": "empty",
+                    "doğruRenkID": 6,
+                    "doğruŞekil": "rect",
+                    "şekilUzaklığı": -30
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 0,
+                    "edge2": 3,
+                    "şekil": "empty",
+                    "doğruRenkID": 0,
+                    "doğruŞekil": "rect"
+                },
+                {
+                    "edge1": 3,
+                    "edge2": 2,
+                    "şekil": "empty",
+                    "doğruRenkID": 0,
+                    "doğruŞekil": "rect"
+                }
+            ]
+        },
+        {
+            "ismi": "Üçgenin Yardımcı Elemanları: Kenarortay",
+            "aciklama": "Bir üçgenin bir köşesini karşı kenarın orta noktasına birleştiren doğru parçasına kenarortay denir. Bir üçgende üç kenarortay tek bir noktada kesişir; bu noktaya ağırlık merkezi denir. Ağırlık merkezi her bir kenarortayı köşeden 2, karşı kenardan 1 oranında böler; yani köşeye yakın parça 2 birim, karşı kenara yakın parça 1 birimdir. Şekilde {mavi:rect} ile gösterilen doğru parçası sol kenarın, {kırmızı:rect} ile gösterilen sağ kenarın, {yellow:rect} ile gösterilen aşağıdaki kenarın kenarortayıdır. sol tarafta eşit ayrılan kenarlar {water_green:rect},  sağ tarafta eşit ayrılan kenarlar {orange:rect}, alt tarafta eşit ayrılan kenarlar {pink:rect} ile gösterilmiştir \n",
+            "açıTestiAktif": false,
+            "şekilBoyutu": 20,
+            "köşeler": [
+                {
+                    "x": 0,
+                    "y": 0.7
+                },
+                {
+                    "x": -0.4,
+                    "y": 0.1
+                },
+                {
+                    "x": -0.8,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.0,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.8,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.4,
+                    "y": 0.1
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 5
+                },
+                {
+                    "v1": 1,
+                    "v2": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 5
+                },
+                {
+                    "v1": 2,
+                    "v2": 3,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 8
+                },
+                {
+                    "v1": 3,
+                    "v2": 4,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 8
+                },
+                {
+                    "v1": 4,
+                    "v2": 5,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 7
+                },
+                {
+                    "v1": 5,
+                    "v2": 0,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 7
+                },
+                {
+                    "v1": 0,
+                    "v2": 3,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 3
+                },
+                {
+                    "v1": 2,
+                    "v2": 5,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 0
+                },
+                {
+                    "v1": 4,
+                    "v2": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 2
+                }
+            ],
+            "açılar": []
+        },
+        {
+            "ismi": "Üçgenin Yardımcı Elemanları: Yükseklik",
+            "aciklama": "Bir üçgenin bir köşesinden karşı kenara (veya uzantısına) çizilen ve bu kenara dik olan doğru parçasına o üçgenin yüksekliği denir. Şekilde {mavi:rect} ile gösterilen kenar yükseklik {orange:rect} gösterilen kenar ise tabandır buna göre yükseklik.\n = {orange:rect} * {mavi:rect} / 2 ",
+            "açıTestiAktif": false,
+            "şekilBoyutu": 20,
+            "köşeler": [
+                {
+                    "x": 0,
+                    "y": 0.7
+                },
+                {
+                    "x": -0.7,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.8,
+                    "y": -0.5
+                },
+                {
+                    "x": 0,
+                    "y": -0.5
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1
+                },
+                {
+                    "v1": 1,
+                    "v2": 3
+                },
+                {
+                    "v1": 3,
+                    "v2": 2
+                },
+                {
+                    "v1": 2,
+                    "v2": 0
+                },
+                {
+                    "v1": 0,
+                    "v2": 3,
+                    "şekil": "empty",
+                    "doğruRenkID": 2,
+                    "doğruŞekil": "rect"
+                },
+                {
+                    "v1": 1,
+                    "v2": 2,
+                    "şekil": "empty",
+                    "doğruRenkID": 7,
+                    "doğruŞekil": "rect"
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 1,
+                    "edge2": 4,
+                    "değer": "90°",
+                    "renkID": 1
+                }
+            ]
+        },
+        {
+            "ismi": "Açıortay üzerindeki açının kollarına inen dikmelerin uzunlukları eşittir",
+            "aciklama": "Bir açının açıortayı üzerinde alınan herhangi bir noktanın, açının kollarına olan dik uzaklıkları eşittir. Şekilde {yellow:rect} ile gösterilen açılar eşit olacak şekilde açıortay çizilmiştir. Açıortay üzerindeki noktadan kollara inen dikmeler {mavi:rect} ile gösterilmiş ve bu dikmeler birbirine eşittir.",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "köşeler": [
+                {
+                    "x": -0.6,
+                    "y": -0.2
+                },
+                {
+                    "x": 0.6,
+                    "y": -0.2
+                },
+                {
+                    "x": 0.8,
+                    "y": -0.2
+                },
+                {
+                    "x": 0.2,
+                    "y": 0.6
+                },
+                {
+                    "x": 0.4,
+                    "y": 0.8
+                },
+                {
+                    "x": 0.5,
+                    "y": 0.2
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1
+                },
+                {
+                    "v1": 1,
+                    "v2": 2
+                },
+                {
+                    "v1": 0,
+                    "v2": 3
+                },
+                {
+                    "v1": 3,
+                    "v2": 4
+                },
+                {
+                    "v1": 0,
+                    "v2": 5
+                },
+                {
+                    "v1": 5,
+                    "v2": 1,
+                    "şekil": "empty",
+                    "doğruRenkID": 2,
+                    "doğruŞekil": "rect"
+                },
+                {
+                    "v1": 5,
+                    "v2": 3,
+                    "şekil": "empty",
+                    "doğruRenkID": 2,
+                    "doğruŞekil": "rect",
+                    "şekilUzaklığı": 80
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 0,
+                    "edge2": 4,
+                    "şekil": "empty",
+                    "doğruRenkID": 3,
+                    "doğruŞekil": "rect",
+                    "ismi": "açıortayın oluşturduğu eş yarım açı"
+                },
+                {
+                    "edge1": 4,
+                    "edge2": 2,
+                    "şekil": "empty",
+                    "doğruRenkID": 3,
+                    "doğruŞekil": "rect",
+                    "ismi": "açıortayın oluşturduğu eş yarım açı"
+                },
+                {
+                    "edge1": 0,
+                    "edge2": 5,
+                    "değer": "90°"
+                },
+                {
+                    "edge1": 2,
+                    "edge2": 6,
+                    "değer": "90°",
+                    "yazıUzaklığı": 75
+                }
+            ]
+        },
+        {
+            "ismi": "Üçgende İç ve Dış Açıortaylar: İki Dış Açıortay Arasında Kalan Açının Ölçüsü",
+            "aciklama": "Bir üçgende iki köşeye ait dış açıortayların kesişmesiyle oluşan açının ölçüsü, üçüncü köşedeki iç açının yarısının 90° eksiğine eşittir. Şekilde {water_green:rect} ile gösterilen soldaki dış açıları ile {orange:rect} ile gösterilen sağdaki dış açıları oluşturan dış açıortayların {sarı:rect} ve {light_blue:rect} kesim noktalarının oluşturduğu {mavi:rect} dir ve {kırmızı:rect} ile gösterilen içerideki açının yarısının 90° eksiğine eşittir; yani {mavi:rect} = 90° - {kırmızı:rect}/2 olur.",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "açıToleransı": 2,
+            "kenarTestiAktif": true,
+            "köşeler": [
+                {
+                    "x": 0,
+                    "y": 0.6
+                },
+                {
+                    "x": -0.4,
+                    "y": 0.2
+                },
+                {
+                    "x": -0.6,
+                    "y": 0.0
+                },
+                {
+                    "x": 0.4,
+                    "y": 0.2
+                },
+                {
+                    "x": 0.6,
+                    "y": 0.0
+                },
+                {
+                    "x": 0,
+                    "y": -0.6
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1
+                },
+                {
+                    "v1": 1,
+                    "v2": 2
+                },
+                {
+                    "v1": 0,
+                    "v2": 3
+                },
+                {
+                    "v1": 3,
+                    "v2": 4
+                },
+                {
+                    "v1": 1,
+                    "v2": 3
+                },
+                {
+                    "v1": 1,
+                    "v2": 5,
+                    "şekil": "empty",
+                    "şekilUzaklığı": 20,
+                    "doğruRenkID": 3,
+                    "doğruŞekil": "rect"
+                },
+                {
+                    "v1": 3,
+                    "v2": 5,
+                    "şekil": "empty",
+                    "şekilUzaklığı": -20,
+                    "doğruRenkID": 9,
+                    "doğruŞekil": "rect"
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 0,
+                    "edge2": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 0
+                },
+                {
+                    "edge1": 5,
+                    "edge2": 6,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 2
+                },
+                {
+                    "edge1": 4,
+                    "edge2": 5,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 5
+                },
+                {
+                    "edge1": 1,
+                    "edge2": 5,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 5
+                },
+                {
+                    "edge1": 4,
+                    "edge2": 6,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 7
+                },
+                {
+                    "edge1": 3,
+                    "edge2": 6,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 7
+                }
+            ]
+        },
+        {
+            "ismi": "Üçgende İç ve Dış Açıortaylar: İki iç açıortay arasında kalan açının ölçüsü",
+            "aciklama": "Bir üçgende iki iç açıortayın kesişmesiyle oluşan açının ölçüsü, o açıya komşu olmayan açının yarısının 90 fazlasına eşittir. Şekilde {water_green:rect} ile gösterilen soldaki iç açıortaylar ile {orange:rect} ile gösterilen sağdaki iç açıortayların birleşimiyle oluşan {mavi:rect} ile gösterilen açı, {kırmızı:rect} ile gösterilen içerideki açının yarısının 90° fazlasına eşittir; yani {mavi:rect} = 90° + {kırmızı:rect}/2 olur.",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "köşeler": [
+                {
+                    "x": 0,
+                    "y": 0.7
+                },
+                {
+                    "x": -0.436,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.436,
+                    "y": -0.5
+                },
+                {
+                    "x": 0,
+                    "y": -0.195
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1
+                },
+                {
+                    "v1": 1,
+                    "v2": 2
+                },
+                {
+                    "v1": 2,
+                    "v2": 0
+                },
+                {
+                    "v1": 1,
+                    "v2": 3
+                },
+                {
+                    "v1": 2,
+                    "v2": 3
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 0,
+                    "edge2": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 0
+                },
+                {
+                    "edge1": 3,
+                    "edge2": 4,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 2
+                },
+                {
+                    "edge1": 1,
+                    "edge2": 4,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 7
+                },
+                {
+                    "edge1": 2,
+                    "edge2": 4,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 7
+                },
+                {
+                    "edge1": 1,
+                    "edge2": 3,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 5
+                },
+                {
+                    "edge1": 0,
+                    "edge2": 3,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 5
+                }
+            ]
+        },
+        {
+            "ismi": "İç açıortay teoremi",
+            "aciklama": " Üçgenin bir köşesinde karşı kenara çizilen iç açıortayın iki yanındaki kenarların uzunluk oranı, açıortayın karşı kenarda böldüğü parçaların uzunluk oranına eşittir. Şekilde {kırmızı:rect} eş açıları, {yeşil:rect} açıortayı, {mavi:rect} sol kenarı, {pink:rect} sağ kenarı, {yellow:rect} açı ortayın böldüğü kenarın soldaki kısmı, {viole:rect} açı ortayın böldüğü kenarın sağdaki kısmı gösterir. buna göre:\n  {blue:rect}        {yellow:rect}\n——  =  ——\n  {pink:rect}        {viole:rect}",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "köşeler": [
+                {
+                    "x": 0,
+                    "y": 0.7
+                },
+                {
+                    "x": -0.8,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.8,
+                    "y": -0.5
+                },
+                {
+                    "x": 0,
+                    "y": -0.5
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1,
+                    "şekilUzaklığı": 80,
+                    "doğruŞekil": "rect",
+                    "şekil": "empty",
+                    "doğruRenkID": 2
+                },
+                {
+                    "v1": 1,
+                    "v2": 3,
+                    "şekilUzaklığı": 80,
+                    "doğruŞekil": "rect",
+                    "şekil": "empty",
+                    "doğruRenkID": 3
+                },
+                {
+                    "v1": 2,
+                    "v2": 0,
+                    "şekilUzaklığı": 80,
+                    "doğruŞekil": "rect",
+                    "şekil": "empty",
+                    "doğruRenkID": 8
+                },
+                {
+                    "v1": 0,
+                    "v2": 3,
+                    "şekilUzaklığı": 0,
+                    "şekil": "empty",
+                    "doğruRenkID": 1,
+                    "doğruŞekil": "rect",
+                    "şekilBoyutu": 25
+                },
+                {
+                    "v1": 3,
+                    "v2": 2,
+                    "şekilUzaklığı": 80,
+                    "doğruŞekil": "rect",
+                    "şekil": "empty",
+                    "doğruRenkID": 6
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 0,
+                    "edge2": 3,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 0
+                },
+                {
+                    "edge1": 3,
+                    "edge2": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 0
+                }
+            ]
+        },
+        {
+            "ismi": "Üçgende Dış Açıortay Teoremi",
+            "aciklama": "Şekilde {kırmızı:rect} ile gösterilen açılar eşittir ve {yeşil:rect} soldaki üçgenin dış açıortayıdır bu yüzden {pink:rect} / {viole:rect} = ({mavi:rect} + {orange:rect}) / {orange:rect} dir",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "köşeler": [
+                {
+                    "x": 0.1,
+                    "y": 0.3
+                },
+                {
+                    "x": -0.9,
+                    "y": -0.2
+                },
+                {
+                    "x": -0.15,
+                    "y": -0.2
+                },
+                {
+                    "x": 0.6,
+                    "y": -0.2
+                },
+                {
+                    "x": 0.4,
+                    "y": 0.45
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "şekilUzaklığı": 40,
+                    "doğruRenkID": 8
+                },
+                {
+                    "v1": 1,
+                    "v2": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "şekilUzaklığı": 40,
+                    "doğruRenkID": 2
+                },
+                {
+                    "v1": 2,
+                    "v2": 0,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "şekilUzaklığı": 40,
+                    "doğruRenkID": 6
+                },
+                {
+                    "v1": 0,
+                    "v2": 3,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 1
+                },
+                {
+                    "v1": 2,
+                    "v2": 3,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "şekilUzaklığı": 40,
+                    "doğruRenkID": 7
+                },
+                {
+                    "v1": 0,
+                    "v2": 4
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 5,
+                    "edge2": 3,
+                    "doğruRenkID": 0,
+                    "doğruŞekil": "rect",
+                    "şekil": "empty"
+                },
+                {
+                    "edge1": 3,
+                    "edge2": 2,
+                    "doğruRenkID": 0,
+                    "doğruŞekil": "rect",
+                    "şekil": "empty"
+                }
+            ]
+        },
+        {
+            "ismi": "Dik Üçgen",
+            "aciklama": "Bir açısı 90° olan üçgene dik üçgen denir. Dik açının karşısındaki kenara hipotenüs, dik açıyı oluşturan kenarlara dik kenarlar denir. Dik üçgende iki dar açının ölçüleri toplamı 90°'dir. şekilde verilen {kırmızı:rect} hipotenüs {yeşil:rect} ise yükseklik {yellow:rect} tabandır ise buna göre\n{kırmızı:rect}² = {yeşil:rect}² + {yellow:rect}² (Pisagor bağıntısı) geçerlidir. Ayrıca 3-4-5, 5-12-13, 8-15-17 gibi özel dik üçgenler ve 30°-60°-90° ile 45°-45°-90° özel açılı üçgenler sık kullanılır.",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "köşeler": [
+                {
+                    "x": -0.6,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.6,
+                    "y": -0.5
+                },
+                {
+                    "x": -0.6,
+                    "y": 0.4
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 3,
+                    "şekilUzaklığı": 40
+                },
+                {
+                    "v1": 1,
+                    "v2": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 0,
+                    "şekilUzaklığı": 40
+                },
+                {
+                    "v1": 2,
+                    "v2": 0,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 1,
+                    "şekilUzaklığı": 40
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 0,
+                    "edge2": 2,
+                    "değer": "90°"
+                }
+            ]
+        },
+        {
+            "ismi": "Öklid Teoremi",
+            "aciklama": "Bir dik üçgende hipotenüse ait yüksekliğin karesi, hipotenüs üzerinde ayırdığı iki parçanın çarpımına eşittir. Ayrıca her dik kenarın karesi, kendisine komşu olan hipotenüs parçası ile hipotenüsün tamamının çarpımına eşittir. Şekilde {sarı:rect} ile gösterilen dik açılar, yüksekliğin hipotenüse dik olduğunu gösterir. {pink:rect} ile gösterilen dik üçgenin sol kenarı, {orange:rect} ile gösterilen dik üçgenin sağ kenarı, {mavi:rect} ile gösterilen yüksekliği, {kırmızı:rect} ile {yeşil:rect} ise yüksekliğin hipotenüsü bölmesiyle oluşmuş parçaları gösterir. Bu durumda:\n{mavi:rect}² = {kırmızı:rect}*{yeşil:rect}\n{pink:rect}² = {kırmızı:rect}*({kırmızı:rect} + {green:rect})\n{orange:rect}² = {green:rect}*({green:rect} + {kırmızı:rect})\ndenklemleri geçerlidir",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": 40,
+            "açıYarıÇapı": 60,
+            "köşeler": [
+                {
+                    "x": 0,
+                    "y": 0.3
+                },
+                {
+                    "x": -0.8,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.8,
+                    "y": -0.5
+                },
+                {
+                    "x": 0,
+                    "y": -0.5
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 8
+                },
+                {
+                    "v1": 0,
+                    "v2": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 7,
+                    "şekilUzaklığı": -40
+                },
+                {
+                    "v1": 1,
+                    "v2": 3,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 0
+                },
+                {
+                    "v1": 3,
+                    "v2": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 1
+                },
+                {
+                    "v1": 0,
+                    "v2": 3,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 2
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 0,
+                    "edge2": 1,
+                    "renkID": 4,
+                    "şekil": "empty",
+                    "doğruRenkID": 3,
+                    "doğruŞekil": "rect",
+                    "ismi": "dik açı",
+                    "şekilUzaklığı": -80
+                },
+                {
+                    "edge1": 2,
+                    "edge2": 4,
+                    "renkID": 4,
+                    "şekil": "empty",
+                    "doğruRenkID": 3,
+                    "doğruŞekil": "rect",
+                    "ismi": "dik açı",
+                    "şekilUzaklığı": -80
+                }
+            ]
+        }
+    ]
+}
