@@ -1335,7 +1335,7 @@
         },
         {
             "ismi": "Üçgenlerde Eşlik: Kenar Kenar Kenar",
-            "aciklama": "Kenar-Kenar-Kenar eşlik kuralı: İki üçgenin karşılıklı üç kenarı eşitse bu üçgenler eştir. Eş üçgenlerin karşılıklı açıları da eşittir. Şekilde {mavi:rect}, {sarı:rect} ve {yeşil:rect} ile gösterilen karşılıklı kenarlar eşit; {kırmızı:rect}, {turuncu:rect} ve {pink:rect} ile gösterilen karşılıklı açılar da eşittir.",
+            "aciklama": "Kenar-Kenar-Kenar eşlik kuralı: İki üçgenin karşılıklı üç kenarı eşitse bu üçgenler eştir. Eş üçgenlerin karşılıklı açıları da eşittir. Şekilde {kırmızı:rect}, {turuncu:rect} ve {pink:rect} ile gösterilen karşılıklı açılar ile {mavi:rect}, {yeşil:rect} ve {sarı:rect} ile gösterilen karşılıklı kenarlar eşittir. (açılar yukarıdan başlayaraktan saat yönüne doğru, kenarlar ise açıların karşısındaki kenar olucak şekilde sıralı verilmiştir)",
             "şekilBoyutu": 20,
             "şekilUzaklığı": -80,
             "açıYarıÇapı": 60,
