@@ -230,18 +230,15 @@
             "kenarlar": [
                 {
                     "v1": 0,
-                    "v2": 1,
-                    "kenarKalınlığı": 5
+                    "v2": 1
                 },
                 {
                     "v1": 0,
-                    "v2": 2,
-                    "kenarKalınlığı": 5
+                    "v2": 2
                 },
                 {
                     "v1": 0,
-                    "v2": 3,
-                    "kenarKalınlığı": 1
+                    "v2": 3
                 }
             ],
             "açılar": [
@@ -2550,6 +2547,71 @@
             ]
         },
         {
+            "ismi": "Muhteşem üçlü",
+            "aciklama": "Bir dik üçgende hipotenüse ait kenarortayın uzunluğu hipotenüsün uzunluğunun yarısına eşittir. Şekilde verildiği üzere {mavi:rect} hipotenüse ait kenar ortay ve hipotenüsteki eş parçaları göstermektedir",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": 40,
+            "açıYarıÇapı": 60,
+            "köşeler": [
+                {
+                    "x": 0,
+                    "y": 0.3
+                },
+                {
+                    "x": -0.8,
+                    "y": -0.5
+                },
+                {
+                    "x": 0.8,
+                    "y": -0.5
+                },
+                {
+                    "x": 0,
+                    "y": -0.5
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1
+                },
+                {
+                    "v1": 0,
+                    "v2": 2
+                },
+                {
+                    "v1": 1,
+                    "v2": 3,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 2
+                },
+                {
+                    "v1": 3,
+                    "v2": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 2
+                },
+                {
+                    "v1": 0,
+                    "v2": 3,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 2
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 0,
+                    "edge2": 1,
+                    "renkID": 0,
+                    "değer": "90°",
+                    "yazıUzaklığı": -10
+                }
+            ]
+        },
+        {
             "ismi": "Öklid Teoremi",
             "aciklama": "Bir dik üçgende hipotenüse ait yüksekliğin karesi, hipotenüs üzerinde ayırdığı iki parçanın çarpımına eşittir. Ayrıca her dik kenarın karesi, kendisine komşu olan hipotenüs parçası ile hipotenüsün tamamının çarpımına eşittir. Şekilde {sarı:rect} ile gösterilen dik açılar, yüksekliğin hipotenüse dik olduğunu gösterir. {pink:rect} ile gösterilen dik üçgenin sol kenarı, {orange:rect} ile gösterilen dik üçgenin sağ kenarı, {mavi:rect} ile gösterilen yüksekliği, {kırmızı:rect} ile {yeşil:rect} ise yüksekliğin hipotenüsü bölmesiyle oluşmuş parçaları gösterir. Bu durumda:\n{mavi:rect}² = {kırmızı:rect}*{yeşil:rect}\n{pink:rect}² = {kırmızı:rect}*({kırmızı:rect} + {green:rect})\n{orange:rect}² = {green:rect}*({green:rect} + {kırmızı:rect})\ndenklemleri geçerlidir",
             "şekilBoyutu": 20,
@@ -2631,6 +2693,446 @@
                     "doğruŞekil": "rect",
                     "ismi": "dik açı",
                     "şekilUzaklığı": -80
+                }
+            ]
+        },
+        {
+            "ismi": "Üçgende Ağırlık Merkezi",
+            "aciklama": "Bir üçgende bir köşeyi karşı kenarın orta noktasına birleştiren doğru parçasına kenarortay denir. Her üçgende üç kenarortay bulunur ve bu kenarortayların tamamı tek bir noktada kesişir. Bu noktaya ağırlık merkezi (G) denir.\n\nŞekilde {water_green:rect} ile gösterilen sol kenar, {orange:rect} ile gösterilen sağ kenar ve {pink:rect} ile gösterilen alt kenar orta noktalarından iki eş parçaya ayrılmıştır.\n\n{blue:rect}, {red:rect} ve {yellow:rect} ile gösterilen doğru parçaları üçgenin kenarortaylarıdır. Bu üç kenarortay G noktasında kesişir.\n\nAğırlık merkezi, her kenarortayı köşeden orta noktaya doğru 2:1 oranında böler. Yani köşeden G noktasına kadar olan parça, G noktasından karşı kenarın orta noktasına kadar olan parçanın iki katıdır.",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -80,
+            "açıYarıÇapı": 60,
+            "kenarTestiAktif": true,
+            "açıTestiAktif": false,
+            "köşeler": [
+                {
+                    "x": 0,
+                    "y": 0.78
+                },
+                {
+                    "x": -0.82,
+                    "y": -0.54
+                },
+                {
+                    "x": 0.82,
+                    "y": -0.54
+                },
+                {
+                    "x": 0,
+                    "y": -0.54
+                },
+                {
+                    "x": 0.41,
+                    "y": 0.12
+                },
+                {
+                    "x": -0.41,
+                    "y": 0.12
+                },
+                {
+                    "x": 0,
+                    "y": -0.10
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 5,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 5,
+                    "benzerlikID": 1,
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 5,
+                    "v2": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 5,
+                    "benzerlikID": 1,
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 1,
+                    "v2": 3,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 8,
+                    "benzerlikID": 2,
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 3,
+                    "v2": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 8,
+                    "benzerlikID": 2,
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 2,
+                    "v2": 4,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 7,
+                    "benzerlikID": 3,
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 4,
+                    "v2": 0,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 7,
+                    "benzerlikID": 3,
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 0,
+                    "v2": 3,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 2,
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 1,
+                    "v2": 4,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 0,
+                    "şekilUzaklığı": 80
+                },
+                {
+                    "v1": 2,
+                    "v2": 5,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 3,
+                    "şekilUzaklığı": 80
+                }
+            ],
+            "açılar": []
+        },
+        {
+            "ismi": "Üçgende Çevrel Çemberin Tanımı",
+            "aciklama": "Bir üçgenin üç köşesinden de geçen çembere çevrel çember denir. Bu çemberin merkezi, üç köşeye eşit uzaklıktadır.\n\nŞekilde {blue:rect} çevrel çemberi, {red:rect} ise çemberin merkezinden üçgenin bir köşesine uzanan yarıçapı gösterir. Üçgenin üç köşesi de çemberin üzerindedir.\n\nBir üçgen için yalnızca bir çevrel çember çizilebilir.",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -20,
+            "açıYarıÇapı": 60,
+            "kenarTestiAktif": true,
+            "açıTestiAktif": false,
+            "köşeler": [
+                {
+                    "x": 0,
+                    "y": 0.65
+                },
+                {
+                    "x": -0.4979,
+                    "y": -0.4178
+                },
+                {
+                    "x": 0.6107,
+                    "y": -0.2223
+                },
+                {
+                    "x": 0,
+                    "y": 0
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1
+                },
+                {
+                    "v1": 1,
+                    "v2": 2
+                },
+                {
+                    "v1": 2,
+                    "v2": 0
+                },
+                {
+                    "v1": 3,
+                    "v2": 0,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 0
+                }
+            ],
+            "açılar": [],
+            "daireler": [
+                {
+                    "v1": 3,
+                    "v2": 0,
+                    "renkID": 2,
+                    "çizgiKalınlığı": 3
+                }
+            ]
+        },
+        {
+            "ismi": "Üçgende Çevrel Çemberin Özellikleri",
+            "aciklama": "Çevrel çemberin merkezi, üçgenin üç köşesine eşit uzaklıktadır. Bu nedenle merkezden köşelere çizilen yarıçapların uzunlukları birbirine eşittir.\n\nŞekilde {blue:rect} çevrel çemberi, {red:rect} ile gösterilen üç doğru parçası ise eşit yarıçapları gösterir.\n\nAyrıca üçgenin kenar orta dikmeleri tek bir noktada kesişir. Bu ortak kesişim noktası çevrel çemberin merkezidir.\n\nÇevrel merkezin yeri üçgenin türüne göre değişir: dar açılı üçgende üçgenin içinde, dik açılı üçgende hipotenüsün orta noktasında, geniş açılı üçgende üçgenin dışındadır.",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -20,
+            "açıYarıÇapı": 60,
+            "kenarTestiAktif": true,
+            "açıTestiAktif": false,
+            "köşeler": [
+                {
+                    "x": 0,
+                    "y": 0.65
+                },
+                {
+                    "x": -0.4979,
+                    "y": -0.4178
+                },
+                {
+                    "x": 0.6107,
+                    "y": -0.2223
+                },
+                {
+                    "x": 0,
+                    "y": 0
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1
+                },
+                {
+                    "v1": 1,
+                    "v2": 2
+                },
+                {
+                    "v1": 2,
+                    "v2": 0
+                },
+                {
+                    "v1": 3,
+                    "v2": 0,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 0,
+                    "benzerlikID": 1
+                },
+                {
+                    "v1": 3,
+                    "v2": 1,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 0,
+                    "benzerlikID": 1
+                },
+                {
+                    "v1": 3,
+                    "v2": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 0,
+                    "benzerlikID": 1
+                }
+            ],
+            "açılar": [],
+            "daireler": [
+                {
+                    "v1": 3,
+                    "v2": 0,
+                    "renkID": 2,
+                    "çizgiKalınlığı": 3
+                }
+            ]
+        },
+        {
+            "ismi": "Üçgende Dış Teğet Çemberinin Tanımı",
+            "aciklama": "Bir üçgende bir kenara ve diğer iki kenarının uzantılarına teğet olan çembere dış teğet çemberi denir.\n\nŞekilde {blue:rect} dış teğet çemberini, {red:rect} çemberin teğet olduğu üçgen kenarını, {yellow:rect} ise diğer iki kenarın uzantısını gösterir. Çember, kırmızı kenara ve sarı uzantılara yalnızca birer noktada dokunur.\n\nHer üçgenin üç farklı dış teğet çemberi vardır. Her biri, üçgenin farklı bir kenarına teğet olacak şekilde oluşturulabilir.",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -20,
+            "açıYarıÇapı": 60,
+            "kenarTestiAktif": true,
+            "açıTestiAktif": false,
+            "köşeler": [
+                {
+                    "x": 0,
+                    "y": 0.9
+                },
+                {
+                    "x": -0.3,
+                    "y": -0.1
+                },
+                {
+                    "x": 0.3,
+                    "y": -0.1
+                },
+                {
+                    "x": 0,
+                    "y": -0.503209
+                },
+                {
+                    "x": -0.386204,
+                    "y": -0.387348
+                },
+                {
+                    "x": 0.386204,
+                    "y": -0.387348
+                },
+                {
+                    "x": 0,
+                    "y": -0.1
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1
+                },
+                {
+                    "v1": 1,
+                    "v2": 2,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 0
+                },
+                {
+                    "v1": 2,
+                    "v2": 0
+                },
+                {
+                    "v1": 1,
+                    "v2": 4,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 3,
+                    "benzerlikID": 1,
+                    "şekilUzaklığı": 20
+                },
+                {
+                    "v1": 2,
+                    "v2": 5,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 3,
+                    "benzerlikID": 1
+                }
+            ],
+            "açılar": [],
+            "daireler": [
+                {
+                    "v1": 3,
+                    "v2": 6,
+                    "renkID": 2,
+                    "çizgiKalınlığı": 3
+                }
+            ]
+        },
+        {
+            "ismi": "Üçgende Dış Teğet Çemberinin Özellikleri",
+            "aciklama": "Bir çemberin yarıçapı, teğet olduğu doğruya teğet noktasında diktir. Dış teğet çemberinde bu özellik üç teğet noktasının tamamı için geçerlidir.\n\nŞekilde {blue:rect} dış teğet çemberini, {green:rect} ise çemberin merkezinden üç teğet noktasına çizilen yarıçapları gösterir. Bu üç yarıçapın uzunlukları birbirine eşittir.\n\nYarıçap ile teğet olan kenar veya kenar uzantısı arasında her temas noktasında 90° açı oluşur.\n\nDış teğet çemberinin merkezi üçgenin dışında bulunur.",
+            "şekilBoyutu": 20,
+            "şekilUzaklığı": -14,
+            "yazıUzaklığı": 40,
+            "açıYarıÇapı": 60,
+            "kenarTestiAktif": true,
+            "açıTestiAktif": false,
+            "köşeler": [
+                {
+                    "x": 0,
+                    "y": 0.9
+                },
+                {
+                    "x": -0.3,
+                    "y": -0.1
+                },
+                {
+                    "x": 0.3,
+                    "y": -0.1
+                },
+                {
+                    "x": 0,
+                    "y": -0.503209
+                },
+                {
+                    "x": -0.386204,
+                    "y": -0.387348
+                },
+                {
+                    "x": 0.386204,
+                    "y": -0.387348
+                },
+                {
+                    "x": 0,
+                    "y": -0.1
+                }
+            ],
+            "kenarlar": [
+                {
+                    "v1": 0,
+                    "v2": 1
+                },
+                {
+                    "v1": 1,
+                    "v2": 2
+                },
+                {
+                    "v1": 2,
+                    "v2": 0
+                },
+                {
+                    "v1": 1,
+                    "v2": 4
+                },
+                {
+                    "v1": 2,
+                    "v2": 5
+                },
+                {
+                    "v1": 3,
+                    "v2": 4,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 1,
+                    "benzerlikID": 1
+                },
+                {
+                    "v1": 3,
+                    "v2": 5,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 1,
+                    "benzerlikID": 1,
+                    "şekilUzaklığı": 14
+                },
+                {
+                    "v1": 3,
+                    "v2": 6,
+                    "şekil": "empty",
+                    "doğruŞekil": "rect",
+                    "doğruRenkID": 1,
+                    "benzerlikID": 1
+                }
+            ],
+            "açılar": [
+                {
+                    "edge1": 3,
+                    "edge2": 5,
+                    "değer": "90°"
+                },
+                {
+                    "edge1": 4,
+                    "edge2": 6,
+                    "değer": "90°"
+                }
+            ],
+            "daireler": [
+                {
+                    "v1": 3,
+                    "v2": 6,
+                    "renkID": 2,
+                    "çizgiKalınlığı": 3
                 }
             ]
         }
