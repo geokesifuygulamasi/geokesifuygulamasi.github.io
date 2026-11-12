@@ -3031,7 +3031,7 @@
         },
         {
             "ismi": "Üçgende Dış Teğet Çemberinin Özellikleri",
-            "aciklama": "Bir çemberin yarıçapı, teğet olduğu doğruya teğet noktasında diktir. Dış teğet çemberinde bu özellik üç teğet noktasının tamamı için geçerlidir.\n\nŞekilde {blue:rect} dış teğet çemberini, {green:rect} ise çemberin merkezinden üç teğet noktasına çizilen yarıçapları gösterir. Bu üç yarıçapın uzunlukları birbirine eşittir.\n\nYarıçap ile teğet olan kenar veya kenar uzantısı arasında her temas noktasında 90° açı oluşur.\n\nDış teğet çemberinin merkezi üçgenin dışında bulunur.",
+            "aciklama": "Bir çemberin yarıçapı, teğet olduğu doğruya teğet noktasında diktir. Dış teğet çemberinde bu özellik üç teğet noktasının tamamı için geçerlidir.\n\nŞekilde {blue:rect} dış teğet çemberini, {green:rect} ise çemberin merkezinden üç teğet noktasına çizilen yarıçapları gösterir. Bu üç yarıçapın uzunlukları birbirine eşittir.\n\nYarıçap ile teğet olan kenar veya kenar uzantısı arasında her temas noktasında 90° açı oluşur.\n\nDış teğet çemberinin merkezi üçgenin dışında bulunur. Bu merkez, bir iç açıortay ile diğer iki dış açıortayın kesişim noktasıdır.",
             "şekilBoyutu": 20,
             "şekilUzaklığı": -14,
             "yazıUzaklığı": 40,
