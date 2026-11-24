@@ -1,6 +1,6 @@
 import{n as e}from"./rolldown-runtime-B8xr6ykz.js";(function(){let e=document.createElement(`link`).relList;if(e&&e.supports&&e.supports(`modulepreload`))return;for(let e of document.querySelectorAll(`link[rel="modulepreload"]`))n(e);new MutationObserver(e=>{for(let t of e)if(t.type===`childList`)for(let e of t.addedNodes)e.tagName===`LINK`&&e.rel===`modulepreload`&&n(e)}).observe(document,{childList:!0,subtree:!0});function t(e){let t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),t.credentials=e.crossOrigin===`use-credentials`?`include`:e.crossOrigin===`anonymous`?`omit`:`same-origin`,t}function n(e){if(e.ep)return;e.ep=!0;let n=t(e);fetch(e.href,n)}})();function t(e,t,n){let r=document.getElementById(e);if(r===null)throw Error(`[createNavBar] passed invalid element ID`);if(!(r instanceof HTMLElement&&r.tagName===`HEADER`))throw Error(`[createNavBar] passed an element ID of a non <header> element`);r.innerHTML=`
         <nav class="navbar container" aria-label="Ana navigasyon">
-            <a class="logo" href="/index.html" aria-label="GeoKeşif ana sayfa">
+            <a class="logo" href="/index.html" aria-label="Renklerle Geometri ana sayfa">
                 <span class="logo-icon">
                     <svg viewBox="0 0 32 32" fill="none"
                          aria-hidden="true">
@@ -16,7 +16,7 @@ import{n as e}from"./rolldown-runtime-B8xr6ykz.js";(function(){let e=document.cr
                     </svg>
                 </span>
 
-                <span>GeoKeşif</span>
+                <span>Renklerle Geometri</span>
             </a>
             <div class="nav-links">
                 ${t?`<a href="#nasil-calisir">Nasıl çalışır?</a>`:``}
@@ -27,7 +27,7 @@ import{n as e}from"./rolldown-runtime-B8xr6ykz.js";(function(){let e=document.cr
     `}var n=e((()=>{}));function r(e){let t=document.getElementById(e);if(t===null)throw Error(`[createNavBar] passed invalid element ID`);if(!(t instanceof HTMLElement&&t.tagName===`FOOTER`))throw Error(`[createNavBar] passed an element ID of a non <footer> element`);t.innerHTML=`
         <div class="footer-content container">
             <a class="logo" href="./index.html">
-                <span>GeoKeşif</span>
+                <span>Renklerle Geometri</span>
             </a>
 
             <span>
